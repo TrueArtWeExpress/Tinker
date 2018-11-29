@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html class="is-desktop  js flexbox flexboxlegacy no-touch rgba multiplebgs boxshadow textshadow opacity cssanimations cssgradients csstransforms csstransforms3d csstransitions generatedcontent" lang="en"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# ibles-production: http://ogp.me/ns/fb/ibles-production#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><script type="text/javascript" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/3a6f258991"></script><script src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/nr-1099.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"3a6f258991","agent":"","transactionName":"ZARRbBcCC0tSV0QIC11OdU0LABFRXFofCApAFUFNBhcEWl9RHhcNVhZAAiwNFkxBQVMVBVENVmoKFhFdQRpXBBA=","applicationID":"219344664","errorBeacon":"bam.nr-data.net","applicationTime":269}</script><title>Wiring Your Z Stepper Motors in Series: 5 Steps (with Pictures)</title><meta property="fb:app_id" content="140028286058792"><meta property="og:site_name" content="Instructables.com"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Wiring Your Z Stepper Motors in Series: This instructable is meant for owners of RepRap and other 3d Printers which use 2 stepper motors for the Z axis, as commonly seen in the Prusa or Mendel styles of printers, among many others.The default configuration for most controller electronic..."><meta property="og:type" content="article"><meta property="og:url" content="https://www.instructables.com/id/Wiring-Your-Z-Stepper-Motors-in-Series/"><meta property="og:image" content="https://cdn.instructables.com/ORIG/FFE/JL9B/IKRNG2YJ/FFEJL9BIKRNG2YJ.png?width=481"><meta property="og:image:width" content="481"><meta property="og:image:height" content="400"><meta property="og:title" content="Wiring Your Z Stepper Motors in Series"><meta property="og:description" content="Wiring Your Z Stepper Motors in Series: This instructable is meant for owners of RepRap and other 3d Printers which use 2 stepper motors for the Z axis, as commonly seen in the Prusa or Mendel styles of printers, among many others.The default configuration for most controller electronic..."><meta property="category" content="technology"><meta property="channel" content="3D-Printing"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@instructables"><meta name="twitter:title" content="Wiring Your Z Stepper Motors in Series"><meta name="twitter:image" content="https://cdn.instructables.com/FFE/JL9B/IKRNG2YJ/FFEJL9BIKRNG2YJ.MEDIUM.jpg"><link rel="dns-prefetch" href="https://ap.lijit.com/"><link rel="dns-prefetch" href="https://js-sec.indexww.com/"><link rel="canonical" href="https://www.instructables.com/id/Wiring-Your-Z-Stepper-Motors-in-Series/"><link rel="shortcut icon" type="image/x-icon" href="https://www.instructables.com/assets/img/siteassets/favicon.ico"><link rel="apple-touch-icon" href="https://www.instructables.com/apple-touch-icon.png"><link rel="apple-touch-icon" sizes="192x192" href="https://www.instructables.com/assets/img/siteassets/apple-touch-icon-192x192.png"><link rel="apple-touch-icon" sizes="512x512" href="https://www.instructables.com/assets/img/siteassets/apple-touch-icon-512x512.png"><link rel="dns-prefetch" href="https://cdn.instructables.com/"><link rel="dns-prefetch" href="https://www.googletagservices.com/"><script type="text/javascript" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/head_js.js" async=""></script><script>
+(function(Ibles){
+    Ibles.JST = Ibles.JST || {};
+    Ibles.pageContext = {};
+    Ibles.isStaging = false;
+    Ibles.isEuGdprRegion = true;
+    Ibles.isLoggedIn = false;
+    Ibles.loggedInCookie = "authy";
+    Ibles.userCookie = "ibleuser";
+})(window.Ibles = window.Ibles || {});
+</script><script>function Deferred(){var o=[],a={resolve:function(n){a.then=function(e){e(n)},a.resolve=function(){throw new Error("Deferred already resolved")};var e,t=0;for(;e=o[t++];)e(n);o=null},then:function(e){o.push(e)}};return a}Ibles.readCookie=function(e,n){return(n=RegExp("(^|; )"+encodeURIComponent(e)+"=([^;]*)").exec(document.cookie))?decodeURIComponent(n[2]):null},function(e,n){var t=n.readCookie,o=t(n.loggedInCookie),a=t(n.userCookie);n.isLoggedIn=!!o;try{n.user=a&&JSON.parse(a)}catch(e){}}(window,Ibles),function(s,r,i){var n,t;function o(){e("//tags.tiqcdn.com/utag/autodesk/instructables"+(i.isStaging?"-qa/qa":"/prod")+"/utag.js")}function e(e){var n=r.createElement("script");n.src=e+"?cb=5",n.async=!0;var t=r.getElementsByTagName("script")[0];t.parentNode.insertBefore(n,t)}function a(){var e,n,t,o,a,d;n=r,t="script",o="ga",(e=s).GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,a=n.createElement(t),d=n.getElementsByTagName(t)[0],a.async=1,a.src="https://www.google-analytics.com/analytics.js",d.parentNode.insertBefore(a,d),i.user?ga("create","UA-306473-1","auto",{userId:i.user.id}):ga("create","UA-306473-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview")}function d(){n?n():t=!0}function c(e){var n=e?"show-ads":"hide-ads";r.documentElement.className+=" "+n}function u(){var e=!1;i.isEuGdprRegion||(i.isLoggedIn||(d(),e=!0),a()),o(),c(e)}s._adskGdprDataSuccess=function(){var e=!1;i.isEuGdprRegion||!s.adskGdprAdvertising||i.isLoggedIn||(d(),e=!0),s.adskGdprAnalytics&&a(),o(),c(e)},s._adskGdprNoData=u,s._adskGdprDataTimeout=u,s.setAdsLoader=function(e){t?e():n=e},i.isEuGdprRegion||e("//tags.tiqcdn.com/utag/autodesk/lib-gdpr/"+(i.isStaging?"qa":"prod")+"/utag.50.js")}(window,document,Ibles),function(n,t){var e=[],o=[],a=[],d=[];function s(e){e.constructor==Array&&e.length&&d.push.apply(d,e)}function r(e){n.addEventListener?n.addEventListener("load",e,!1):n.attachEvent?n.attachEvent("onload",e):n.onload=e}function i(){var e=t.getElementById("deferred-styles");if(e){var n=t.createElement("div");n.innerHTML=e.textContent,t.body.appendChild(n),e.parentElement.removeChild(e)}}r(i),n.loadJS=function(){var e=arguments,n=e[e.length-1];"function"==typeof n&&(s(e[0]),a.push([n]))},n.loadJsQueue=a,n.sessionReady=function(){var e=arguments,n=e[e.length-1];"function"==typeof n&&(s(e[0]),o.push([n]))},n.sessionReadyQueue=o,n.headJsLoaded=function(){e.push(arguments)},n.headJsLoadedQueue=e,n.execJsOnLoad=r,n.loadDeferredStyles=i,n.pageScripts=d}(window,document),function(t,e,n){t.googletag=t.googletag||{},t.googletag.cmd=t.googletag.cmd||[],t.renderAdSlot=function(e){var n=t.adsRenderDepsLoaded;n&&n.then(function(){googletag.cmd.push(function(){googletag.display(e)})})}}(window,document,Ibles);</script><link href="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/global_desktop_bs2_css.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/promo_styles.css"><style>
+#halloween-channel-promo {  
+    width: 110px;
+    height: 20px;
+    background: url(https://www.instructables.com/files/orig/F50/YGRQ/JMS4YCRF/F50YGRQJMS4YCRF.png) no-repeat;
+    background-size: 110px;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    float: none !important;
+}
+#halloween-channel-promo:hover {
+   background-position: 0 -22px;
+}
+
+.step-body a {
+     word-break: break-word !important;
+}
+.ible-files a {
+    word-break: break-word !important;
+}
+</style><link href="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/ible_desktop_css.css" rel="stylesheet" type="text/css"><script type="application/ld+json">{"description":"Wiring Your Z Stepper Motors in Series: This instructable is meant for owners of RepRap and other 3d Printers which use 2 stepper motors for the Z axis, as commonly seen in the Prusa or Mendel styles of printers, among many others.The default configuration for most controller electronic...","image":{"url":"https://cdn.instructables.com/FFE/JL9B/IKRNG2YJ/FFEJL9BIKRNG2YJ.LARGE.jpg","width":1024,"@type":"ImageObject","height":852.0},"datePublished":"2016-02-17","contributor":{"@type":"Person","name":"AddictiveMfg"},"publisher":{"url":"https://www.instructables.com","logo":{"url":"https://www.instructables.com/assets/img/logo-228x60.png","width":228,"@type":"ImageObject","height":60},"@type":"Organization","name":"Instructables"},"name":"Wiring Your Z Stepper Motors in Series","author":{"url":"https://www.instructables.com","logo":{"url":"https://www.instructables.com/assets/img/logo-228x60.png","width":228,"@type":"ImageObject","height":60},"@type":"Organization","name":"Instructables"},"headline":"Wiring Your Z Stepper Motors in Series","@type":"Article","mainEntityOfPage":{"@id":"https://www.instructables.com/id/Wiring-Your-Z-Stepper-Motors-in-Series/","@type":"WebPage"},"@context":"https://schema.org","dateModified":"2017-10-01"}</script><script type="text/javascript" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/ible_desktop_logged_in_js.js"></script><script type="application/ld+json">{"@context":"http://schema.org","itemListElement":[{"position":1,"@type":"ListItem","item":{"@id":"https://www.instructables.com/technology/","name":"technology","@type":"WebPage"}},{"position":2,"@type":"ListItem","item":{"@id":"https://www.instructables.com/technology/3D-Printing/","name":"3D-Printing","@type":"WebPage"}},{"position":3,"@type":"ListItem","item":{"@id":"https://www.instructables.com/id/Wiring-Your-Z-Stepper-Motors-in-Series/","name":"Wiring Your Z Stepper Motors in Series","@type":"WebPage"}}],"@type":"BreadcrumbList"}</script></head><body class=""><header id="gbl-header" class="nopin"><div class="top-bar"><div class="container content-match"><a id="header-robot" href="https://www.instructables.com/"><h2 class="sr-only">Instructables</h2><img id="instructables-logo" alt="Instructables" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/instructables-logo2x.png"></a><div id="header-search"><form id="header-search-form" class="form-horizontal" action="/howto/" method="get"><div class="input-append"><input class="input-medium" type="text" name="q" id="q" placeholder="Let's Make ..."><button class="btn" type="button" id="header-search-btn"><i class="bg-icon search"></i></button></div></form></div><nav id="header-nav"><h2 class="sr-only icon-list">Main Menu</h2><ul><li><a class="btn btn-clear explore-btn" href="https://www.instructables.com/featured/">Featured</a></li><li><a class="btn btn-clear write-btn" href="https://www.instructables.com/create/">Write an Instructable</a></li></ul></nav><div id="you-menu-container" class="pull-right"><div id="you-menu" class="dropdown">
+    <a class="you-menu-toggle" data-toggle="dropdown"><img id="you-image" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/user.png" width="34" height="34"></a>
+    <ul id="you-menu-dropdown" class="dropdown-menu pull-right"><li><a href="https://www.instructables.com/member/TrueArtWeExpress/"><svg class="svg-icon user" viewBox="0 0 24 24">
+    <use xlink:href="/assets/svg/sprite.svg#user"></use>
+</svg>Profile</a></li>
+
+<li>
+    <a href="https://www.instructables.com/member/TrueArtWeExpress/mailbox/inbox/"><svg class="svg-icon email" viewBox="0 0 24 24">
+    <use xlink:href="/assets/svg/sprite.svg#email"></use>
+</svg>Inbox
+    
+    </a>
+</li>
+
+<li><a class="feed-link" href="https://www.instructables.com/feed/"><svg class="svg-icon follower" viewBox="0 0 24 24">
+    <use xlink:href="/assets/svg/sprite.svg#follower"></use>
+</svg>Feed</a></li>
+
+<li class="divider"></li>
+
+
+
+<li class="multi-link">
+    
+    
+</li>
+    
+<li class="multi-link">
+    
+    
+</li>
+
+<li class="multi-link">
+    
+    
+</li>
+
+<li>
+    <div class="button-actions">
+        <a class="btn btn-default btn-logout" href="https://www.instructables.com/account/logout">Logout</a>
+        <a class="btn btn-orange btn-block btn-large create-btn" href="https://www.instructables.com/editInstructable/new/">New Instructable »</a>
+    </div>
+</li></ul>
+</div></div></div></div><div class="bottom-bar" id="header-promo-container"><div class="container main content-match"><nav id="promo-menu"><h2 class="sr-only">Secondary Menu</h2><i class="icon-list"></i><ul id="promo-tabs" class="clearfix"><li class="extra"><a href="https://www.instructables.com/featured/">Featured</a></li><li class="extra"><a href="https://www.instructables.com/create/">Write an Instructable</a></li><li><a href="https://www.instructables.com/classes/">Classes</a></li><li><a href="https://www.instructables.com/contest/">Contests</a></li><li><a href="https://www.instructables.com/topics/">Community</a></li><li><a href="https://www.instructables.com/teachers/">Teachers</a></li></ul></nav><a id="autodesk-header-link" href="http://www.autodesk.com/" title="Autodesk: Make Anything"><img id="autodesk-make-logo" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/autodesk-makeanything.png" srcset="/assets/img/autodesk-makeanything.png, /assets/img/autodesk-makeanything%402x.png 2x" alt="Autodesk: Make Anything"></a></div></div></header><div class="aspace-wrap "><div class="aspace container"><div id="aplace"><div id="gpt-ad-leaderboard" class="gpt-ad"><script>
+                    renderAdSlot('gpt-ad-leaderboard');
+                </script></div></div></div></div><main role="main"><article id="article" class="full-wrapper"><header class="article-header"><h1 class="header-title">Wiring Your Z Stepper Motors in Series</h1><div class="sub-header"><span class="header-byline">
+            By <a href="https://www.instructables.com/member/AddictiveMfg/" rel="author">AddictiveMfg</a>
+            
+                in <a class="category" href="https://www.instructables.com/technology/">Technology</a><a class="channel" href="https://www.instructables.com/technology/3D-Printing/">3D-Printing</a></span><span class="header-stats"><p class="svg-views view-count">34.809</p><p class="svg-favorite active favorite-count">146</p><p class="svg-comments active comment-count">11</p><p class="svg-featured">Featured</p></span></div><div class="sub-header clearfix"><span class="header-meta"><span class="posted-date" style="display: inline;"> Published Feb 17th, 2016</span><button class="license-btn" data-url="http://creativecommons.org/licenses/by/2.0/"><img alt="license" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/by_small.png"></button><button class="stats-btn author-action">Stats</button></span><span class="header-actions"><button class="pdf-btn" data-role-group="pdf" data-sourcea="download"><i class="svg-icon svg-pdf"></i>Download</button><button class="favorite-btn"><i class="svg-icon svg-favorite"></i><span class="favorite-txt">Favorite</span></button></span></div></header><div class="article-body"><div class="main-content"><section id="intro" class="step" data-stepid="SIYJW4XIJD78UQ0"><div class="mediaset"><div class="photoset-wrapper">
+    <div class="photoset" style="max-width: 545.457px;"><div class="photoset-row items-3 "><div class="photoset-cell" style="-webkit-flex: 0.44537037037037036; flex: 0.44537037037037036;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset71" href="https://cdn.instructables.com/F18/YR0U/IKRIQXFC/F18YR0UIKRIQXFC.LARGE.jpg">
+            <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F18YR0UIKRIQXFC.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-col" style="-webkit-flex:0.3338538955405171;flex:0.3338538955405171;"><div class="photoset-cell" style="-webkit-flex: 0.44537037037037036; flex: 0.44537037037037036;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset71" href="https://cdn.instructables.com/F7R/YJ37/IKRIQXFG/F7RYJ37IKRIQXFG.LARGE.jpg">
+            <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F7RYJ37IKRIQXFG.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset71" href="https://cdn.instructables.com/F8Y/M1R7/IKPS9CSP/F8YM1R7IKPS9CSP.LARGE.jpg">
+            <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F8YM1R7IKPS9CSP.jpg">
+            
+        </a>
+        
+    </div>
+</div></div></div></div>
+</div></div><noscript><img alt="Picture of Wiring Your Z Stepper Motors in Series" src="https://cdn.instructables.com/F18/YR0U/IKRIQXFC/F18YR0UIKRIQXFC.LARGE.jpg" width="481" height="1080"><img alt="Picture of Wiring Your Z Stepper Motors in Series" src="https://cdn.instructables.com/F7R/YJ37/IKRIQXFG/F7RYJ37IKRIQXFG.LARGE.jpg" width="481" height="1080"><img alt="Picture of Wiring Your Z Stepper Motors in Series" src="https://cdn.instructables.com/F8Y/M1R7/IKPS9CSP/F8YM1R7IKPS9CSP.LARGE.jpg" width="1440" height="1080"></noscript><div class="author-promo"><div class="author-promo-row"><div class="byline"><a class="avatar" rel="author" href="https://www.instructables.com/member/AddictiveMfg/"><img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FA14CZCIQW1GFSX_002.jpg"></a><span class="author-name">By <a class="author" rel="author" href="https://www.instructables.com/member/AddictiveMfg/">AddictiveMfg</a></span><span class="author-follow"><button class="btn btn-yellow follow-btn">Follow</button></span></div></div><div class="recent-ibles promoted-content "><span class="promoted-items-label"><a rel="author" class="author" href="https://www.instructables.com/member/AddictiveMfg/">More by the author:</a></span><div class="promoted-items list-unstyled pull-right"><div data-id="" class="promoted-item-thumbnail thumbnail instructable-thumbnail"><div class="image-wrapper"><a href="https://www.instructables.com/id/Extending-Power-Pins-for-Multiple-Connectors/" title="Extending Power Pins for Multiple Connectors"><img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FX754FVIKSKYRB3.jpg" alt="Extending Power Pins for Multiple Connectors"></a></div></div><div data-id="" class="promoted-item-thumbnail thumbnail instructable-thumbnail"><div class="image-wrapper"><a href="https://www.instructables.com/id/3D-Printing-Filament-Drying-Chamber/" title="3D Printing Filament Drying Chamber"><img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FJMYFX7IKRNHRTX.jpg" alt="3D Printing Filament Drying Chamber"></a></div></div><div data-id="" class="promoted-item-thumbnail thumbnail instructable-thumbnail"><div class="image-wrapper"><a href="https://www.instructables.com/id/Super-Simple-Spool-Storage-Rack/" title="Super Simple Spool Storage Rack"><img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FK8JR0UIGGW7HTI.jpg" alt="Super Simple Spool Storage Rack"></a></div></div></div></div></div><div class="step-body"><p>This
+ instructable is meant for owners of RepRap and other 3d Printers which 
+use 2 stepper motors for the Z axis, as commonly seen in the Prusa or 
+Mendel styles of printers, among many others.</p><p>The default 
+configuration for most controller electronics such as RAMPS is to have 
+the motors connected in parallel. However as I will attempt to explain, 
+it can be more beneficial to connect the motors in series instead.</p><p>So
+ the purpose of this instructable is to describe a method of creating a 
+"plug and play" wiring harness that will convert your motors from 
+parallel to series.</p><p>Pictured are conceptual diagrams which 
+hopefully illustrate the path of the circuit and how this makes the 
+motors series connected.</p></div><div class="step-toolbar"><button class="step-tip">Add Tip</button><button class="step-question">Ask Question</button><button class="step-comment">Comment</button><button class="svg-pdf step-download download-pdf" data-sourcea="course" data-role-group="pdf">Download</button></div></section><div id="gpt-ad-infeed-leaderboard" class="gpt-ad leaderboard-sized-ad"><script>
+                renderAdSlot('gpt-ad-infeed-leaderboard');
+            </script></div><section id="step1" class="step" data-stepid="SJP0QPUIKPS9D2A"><h2 class="step-title">Step 1: The What and Why of Series Stepper Motor Wiring</h2><div class="step-body"><p>On
+ my printer I used DRV8825 stepper drivers which don't behave very well 
+with parallel wired motors.  Due to some specifics about how the driver 
+works it basically ends up "skipping" parts of the microstepped 
+waveform.  That's not to say it misses any steps and loses its position,
+ just that it flattens out parts of what should be a smooth sinusoidal 
+current waveform making for louder more jerky operation.  This is 
+particularly noticeable if autoleveling is enabled on your printer.  
+Autoleveling compensates for a bed which is not parallel to the toolhead
+ movement by constantly making small Z adjustments as it moves across 
+the X and Y axes.  In my case this caused very audible "pop" sounds from
+ my Z motors as it skipped a bunch of microsteps during a print.</p><p>For a way more detailed and technical explanation of what's going on and another solution to the issue involving diodes, see <a href="http://cabristor.blogspot.com/2015/02/drv8825-missing-steps.html">this informative blog post</a>. (not my blog)</p><p>So
+ the gist of it is that wiring the Z motors in series rather than 
+parallel significantly reduces this effect, by making the motors act 
+like one of a higher voltage rating/higher resistance (4x compared to 
+parallel configuration).</p><p>Another benefit is that the motors will 
+only require 1/2 the current for the same amount of motor output torque,
+ allowing the stepper driver to run cooler.</p></div><div class="step-toolbar"><button class="step-tip">Add Tip</button><button class="step-question">Ask Question</button><button class="step-comment">Comment</button><button class="svg-pdf step-download download-pdf" data-sourcea="course" data-role-group="pdf">Download</button></div></section><section id="step2" class="step" data-stepid="SYHCTVMIKR7M9VJ"><h2 class="step-title">Step 2: Parts and Tools</h2><div class="step-body"><p>Here
+ is a list of items used to build my harness.  If you find this 
+instructable useful and require any parts or tools, using these amazon 
+affiliate links for your shopping would help me out.</p><p>This project requires to following parts:</p><ul><li>Breadboard Jumper Wire w/ Female end (<a href="http://amzn.to/1Troz6h" rel="nofollow">male-female, 40pcs</a> OR <a href="http://amzn.to/1Luaz3P" rel="nofollow">full set, 120pcs</a> ) </li><li><a href="http://amzn.to/24b1EQg" rel="nofollow">Double Row 0.1" Male Headers</a></li><li><a href="http://amzn.to/24b1Cbb" rel="nofollow">Heat shrink tubing</a> assortment various sizes</li><li><a href="http://amzn.to/1TroIXn" rel="nofollow">Solder</a> basic 60/40 rosin core</li></ul><p>And tools:</p><ul><li><a href="http://amzn.to/1STdZW6" rel="nofollow">Wire cutters</a> flush cutters great for clipping wires or component leads </li><li><a href="http://amzn.to/219mvB8" rel="nofollow">Soldering iron / station</a> (includes wire cutters) the HAKKO FX888 is basically the gold standard of soldering stations </li><li><a href="http://amzn.to/24b1yIy" rel="nofollow">Wire strippers</a> I've had an older version of these wire strippers for over a decade and they are still my favorite, very reliable and quick </li><li>optional <a href="http://amzn.to/1LulPxe" rel="nofollow">Tweezer nose pliers</a> very nice for fine work bending wires or pins</li></ul><p>The
+ jumper wires typically come in a ribbon of 40 wires at a time, and you 
+can peel away contiguous strips of any number.  This project only 
+requires 4 such wires.  I find these style of jumper wires incredibly 
+handy for electronics protoyping and tinkering, they are great for 
+connecting arduinos, breadboards, and other quick connections.  There 
+are three types: Male to Male, Male to Female, and Female to Female. As 
+long as your wires have female on at least one end it will work here.</p></div><div class="step-toolbar"><button class="step-tip">Add Tip</button><button class="step-question">Ask Question</button><button class="step-comment">Comment</button><button class="svg-pdf step-download download-pdf" data-sourcea="course" data-role-group="pdf">Download</button></div></section><section id="step3" class="step" data-stepid="SARN99CIKRIQDJF"><h2 class="step-title">Step 3: Prepare Wires</h2><div class="mediaset"><div class="photoset-wrapper">
+    <div class="photoset"><div class="photoset-row items-3 "><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset76" href="https://cdn.instructables.com/F2J/JAWX/IKRIQE69/F2JJAWXIKRIQE69.LARGE.jpg">
+            <img alt="Picture of Prepare Wires" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F2JJAWXIKRIQE69.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-col" style="-webkit-flex:0.6666666666666666;flex:0.6666666666666666;"><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset76" href="https://cdn.instructables.com/FV3/OSQW/IKRIQE6M/FV3OSQWIKRIQE6M.LARGE.jpg">
+            <img alt="Picture of Prepare Wires" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FV3OSQWIKRIQE6M.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset76" href="https://cdn.instructables.com/F0T/YBO1/IKRIQE6N/F0TYBO1IKRIQE6N.LARGE.jpg">
+            <img alt="Picture of Prepare Wires" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F0TYBO1IKRIQE6N.jpg">
+            
+        </a>
+        
+    </div>
+</div></div></div></div>
+</div></div><noscript><img alt="Picture of Prepare Wires" src="https://cdn.instructables.com/F2J/JAWX/IKRIQE69/F2JJAWXIKRIQE69.LARGE.jpg" width="1440" height="1080"><img alt="Picture of Prepare Wires" src="https://cdn.instructables.com/FV3/OSQW/IKRIQE6M/FV3OSQWIKRIQE6M.LARGE.jpg" width="1440" height="1080"><img alt="Picture of Prepare Wires" src="https://cdn.instructables.com/F0T/YBO1/IKRIQE6N/F0TYBO1IKRIQE6N.LARGE.jpg" width="1440" height="1080"></noscript><div class="step-body"><p>Peel 4 wires from your breadboard jumpers(with female ends), fold in half and clip in the middle.</p><p>Take
+ a side with female connectors, and splay out the wires and strip a 
+small amount from the ends (about the length of the shorter side of the 
+header pins).</p><p>Tin the ends of your wires with a small amount of 
+solder, and place some heat shrink tubing over them, 1/16" size fits 
+just right.   Make sure the wires are peeled backed far enough that the 
+heatshrink won't get heated during soldering.</p></div><div class="step-toolbar"><button class="step-tip">Add Tip</button><button class="step-question">Ask Question</button><button class="step-comment">Comment</button><button class="svg-pdf step-download download-pdf" data-sourcea="course" data-role-group="pdf">Download</button></div></section><section id="step4" class="step" data-stepid="SY2UMWDIKRIQG8H"><h2 class="step-title">Step 4: Prepare Pins</h2><div class="mediaset"><div class="photoset-wrapper">
+    <div class="photoset" style="max-width: 997.824px;"><div class="photoset-row items-3 "><div class="photoset-cell" style="-webkit-flex: 0.75; flex: 0.75;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset81" href="https://cdn.instructables.com/F57/HZUR/IKPS9CTF/F57HZURIKPS9CTF.LARGE.jpg">
+            <img alt="Picture of Prepare Pins" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F57HZURIKPS9CTF.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-col" style="-webkit-flex:0.6754629629629629;flex:0.6754629629629629;"><div class="photoset-cell" style="-webkit-flex: 1.3509259259259259; flex: 1.3509259259259259;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset81" href="https://cdn.instructables.com/FPF/8PJG/IKRIQDXK/FPF8PJGIKRIQDXK.LARGE.jpg">
+            <img alt="Picture of Prepare Pins" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FPF8PJGIKRIQDXK.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-cell" style="-webkit-flex: 1.3509259259259259; flex: 1.3509259259259259;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset81" href="https://cdn.instructables.com/FKZ/ZODG/IKRIQDXQ/FKZZODGIKRIQDXQ.LARGE.jpg">
+            <img alt="Picture of Prepare Pins" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FKZZODGIKRIQDXQ.jpg">
+            
+        </a>
+        
+    <div class="photoset-showmore"><img class="loading" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/ajax_loader_48px.gif">3 More Images</div></div>
+</div></div></div><div class="photoset-row items-3  hidden-row"><div class="photoset-cell" style="-webkit-flex: 1.5; flex: 1.5;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset81" href="https://cdn.instructables.com/FDB/36DV/IKPS9CT5/FDB36DVIKPS9CT5.LARGE.jpg">
+            <img alt="Picture of Prepare Pins" data-src="https://cdn.instructables.com/FDB/36DV/IKPS9CT5/FDB36DVIKPS9CT5.LARGE.jpg?auto=webp&amp;width=358&amp;crop=3:2">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-cell" style="-webkit-flex: 1.3509259259259259; flex: 1.3509259259259259;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset81" href="https://cdn.instructables.com/F43/HZPL/IKRIQDXT/F43HZPLIKRIQDXT.LARGE.jpg">
+            <img alt="Picture of Prepare Pins" data-src="https://cdn.instructables.com/F43/HZPL/IKRIQDXT/F43HZPLIKRIQDXT.LARGE.jpg?auto=webp&amp;width=322">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset81" href="https://cdn.instructables.com/FOY/00T4/IKRIQE28/FOY00T4IKRIQE28.LARGE.jpg">
+            <img alt="Picture of Prepare Pins" data-src="https://cdn.instructables.com/FOY/00T4/IKRIQE28/FOY00T4IKRIQE28.LARGE.jpg?auto=webp&amp;width=318">
+            
+        </a>
+        
+    </div>
+</div></div></div>
+</div></div><noscript><img alt="Picture of Prepare Pins" src="https://cdn.instructables.com/F57/HZUR/IKPS9CTF/F57HZURIKPS9CTF.LARGE.jpg" width="810" height="1080"><img alt="Picture of Prepare Pins" src="https://cdn.instructables.com/FPF/8PJG/IKRIQDXK/FPF8PJGIKRIQDXK.LARGE.jpg" width="1459" height="1080"><img alt="Picture of Prepare Pins" src="https://cdn.instructables.com/FKZ/ZODG/IKRIQDXQ/FKZZODGIKRIQDXQ.LARGE.jpg" width="1459" height="1080"><img alt="Picture of Prepare Pins" src="https://cdn.instructables.com/FDB/36DV/IKPS9CT5/FDB36DVIKPS9CT5.LARGE.jpg" width="410" height="205"><img alt="Picture of Prepare Pins" src="https://cdn.instructables.com/F43/HZPL/IKRIQDXT/F43HZPLIKRIQDXT.LARGE.jpg" width="1459" height="1080"><img alt="Picture of Prepare Pins" src="https://cdn.instructables.com/FOY/00T4/IKRIQE28/FOY00T4IKRIQE28.LARGE.jpg" width="1440" height="1080"></noscript><div class="step-body"><p>Clip off a 4x2 piece of your male header pins.</p><p>Placing
+ these pins on a breadboard(with the longer end facing into the 
+breadboard) helps to hold everything in place while its being worked on.
+  Pictured is a random Arduino shield with built in breadboard.</p><p>Now
+ two pairs of diagonal pins will need to be electrically connected, as 
+shown.  I do this by carefully bending them toward each other, and then 
+soldering with a small amount of solder.  Tweezer nose pliers are 
+helpful here as they can fit in very small spots.  </p><p>Care should be
+ taken when bending and soldering these pins as they can slide up and 
+down in the plastic header(the breadboard helps somewhat to keep the 
+pins from slidingn).  If the heat from the soldering iron is left too 
+long it can melt the plastic holder causing the pins to fall loose, and 
+you may need to start with a fresh header piece.  Also when soldering, 
+avoid globbing on too much which could cause unwanted bridging to other 
+pins, space is somewhat tight.</p><p>You should end up with four remaining unbent pins in a staggered pattern, which we will solder our wires to.</p></div><div class="step-toolbar"><button class="step-tip">Add Tip</button><button class="step-question">Ask Question</button><button class="step-comment">Comment</button><button class="svg-pdf step-download download-pdf" data-sourcea="course" data-role-group="pdf">Download</button></div></section><section id="step5" class="step" data-stepid="S5OIUQOIKRIQMC0"><h2 class="step-title">Step 5: Solder Wire Ends to Pins and Finish</h2><div class="mediaset"><div class="photoset-wrapper">
+    <div class="photoset"><div class="photoset-row items-4 "><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset89" href="https://cdn.instructables.com/FUG/NGKM/IKRIQGP2/FUGNGKMIKRIQGP2.LARGE.jpg">
+            <img alt="Picture of Solder Wire Ends to Pins and Finish" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FUGNGKMIKRIQGP2.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-col" style="-webkit-flex:0.44638213247667125;flex:0.44638213247667125;"><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset89" href="https://cdn.instructables.com/F90/8L0W/IKRIQGTV/F908L0WIKRIQGTV.LARGE.jpg">
+            <img alt="Picture of Solder Wire Ends to Pins and Finish" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F908L0WIKRIQGTV.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-cell" style="-webkit-flex: 1.3509259259259259; flex: 1.3509259259259259;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset89" href="https://cdn.instructables.com/FOS/9UTY/IKRIQGYY/FOS9UTYIKRIQGYY.LARGE.jpg">
+            <img alt="Picture of Solder Wire Ends to Pins and Finish" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FOS9UTYIKRIQGYY.jpg">
+            
+        </a>
+        
+    </div>
+</div><div class="photoset-cell" style="-webkit-flex: 1.3333333333333333; flex: 1.3333333333333333;" data-imagenotes="[]">
+    <div class="photoset-image">
+        <a class="gallery-link" rel="photoset89" href="https://cdn.instructables.com/FL7/CV4I/IKRIQY80/FL7CV4IIKRIQY80.LARGE.jpg">
+            <img alt="Picture of Solder Wire Ends to Pins and Finish" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FL7CV4IIKRIQY80.jpg">
+            
+        </a>
+        
+    </div>
+</div></div></div></div>
+</div></div><noscript><img alt="Picture of Solder Wire Ends to Pins and Finish" src="https://cdn.instructables.com/FUG/NGKM/IKRIQGP2/FUGNGKMIKRIQGP2.LARGE.jpg" width="1440" height="1080"><img alt="Picture of Solder Wire Ends to Pins and Finish" src="https://cdn.instructables.com/F90/8L0W/IKRIQGTV/F908L0WIKRIQGTV.LARGE.jpg" width="1440" height="1080"><img alt="Picture of Solder Wire Ends to Pins and Finish" src="https://cdn.instructables.com/FOS/9UTY/IKRIQGYY/FOS9UTYIKRIQGYY.LARGE.jpg" width="1459" height="1080"><img alt="Picture of Solder Wire Ends to Pins and Finish" src="https://cdn.instructables.com/FL7/CV4I/IKRIQY80/FL7CV4IIKRIQY80.LARGE.jpg" width="1440" height="1080"></noscript><div class="step-body"><p>Now
+ we can solder our previously tinned wires to the header pins.  Lay the 
+wire ends straight along each pin and solder.  Try to solder it along 
+the outside edge, giving more room to avoid bridging the connection with
+ the diagonal connections. </p><p>When soldering the wires, be sure not 
+to swap the orientation of them; they will be staggered, but should 
+still stay in the same ordering from left to right. </p><p>Visually inspect that no unwanted pins were bridged.  A multimeter can also be used to verify this.</p><p>Push the heat shrink down over the soldered connections and heat with a heat gun.</p><p>Now
+ the other end of the wires, the 4 female pins can be held together with
+ a piece of 3/8" heatshrink.  Again be sure not to change the ordering 
+of the wires when heating shrinking these.</p><p>That's all, now it can 
+be plugged into a single RAMPS(or other controller) Z-motor output, and 
+the two Z motors plugged into the other end of the harness.  The motors 
+are now connected in series.</p></div><div class="step-toolbar"><button class="step-tip">Add Tip</button><button class="step-question">Ask Question</button><button class="step-comment">Comment</button><button class="svg-pdf step-download download-pdf" data-sourcea="course" data-role-group="pdf">Download</button></div></section><div class="dual-ads"><div class="dual-ads-inner"><div id="gpt-ad-inline-med-1" class="gpt-ad"><script>
+                        renderAdSlot('gpt-ad-inline-med-1');
+                    </script></div><div id="gpt-ad-inline-med-2" class="gpt-ad"><script>
+                        renderAdSlot('gpt-ad-inline-med-2');
+                    </script></div></div></div><section id="imadeits" class="imadeits"><h2>7 People Made This Project!</h2><ul class="list-unstyled unstyled imadeit-list js-posts" style="min-height: initial;"><li class="imadeit js-post ">
+    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FYNF4ZKJIUJXV85.jpg">
+    <h3 class="made-by"><a class="user" href="https://www.instructables.com/member/StephenG162/">StephenG162</a> made it!</h3>
+</li><li class="imadeit js-post ">
+    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F4HIK9QJE94LDH2.jpg">
+    <h3 class="made-by"><a class="user" href="https://www.instructables.com/member/voodoocat/">voodoocat</a> made it!</h3>
+</li><li class="imadeit js-post ">
+    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F4NBZEGJCAUCI9U.jpg">
+    <h3 class="made-by"><a class="user" href="https://www.instructables.com/member/ColoRich/">ColoRich</a> made it!</h3>
+</li><li class="imadeit js-post ">
+    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F1J24DSIW6PE0GZ.jpg">
+    <h3 class="made-by"><a class="user" href="https://www.instructables.com/member/PeterH214/">PeterH214</a> made it!</h3>
+</li><li class="imadeit js-post hide">
+    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FZKL6AYIU5NEP7C.jpg">
+    <h3 class="made-by"><a class="user" href="https://www.instructables.com/member/Googliola/">Googliola</a> made it!</h3>
+</li><li class="imadeit js-post hide">
+    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FRRILFPIQW1GRRY.jpg">
+    <h3 class="made-by"><a class="user" href="https://www.instructables.com/member/AddictiveMfg/">AddictiveMfg</a> made it!</h3>
+</li><li class="imadeit js-post hide">
+    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FB62BDVIKY6JZ8X.jpg">
+    <h3 class="made-by"><a class="user" href="https://www.instructables.com/member/Spiky1987/">Spiky1987</a> made it!</h3>
+</li><li class="see-more">
+    <div class="see-more-inner">
+        <p>See 3 more that made it</p>
+    </div>
+</li></ul><div class="share"><div class="share-inner"><p>Did you make this project? Share it with us!</p><button class="btn btn-orange made-it-btn js-show-poster">I Made It!</button></div></div></section><section class="recommendations"><h2>Recommendations</h2><ul class="list-unstyled projects"><li><article><a href="https://www.instructables.com/id/DIY-4X5-Camera-Scan-Back/"><img alt="DIY 4X5 Camera Scan Back" class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F2HDHKEJOWSKSO7.jpg" data-src="https://cdn.instructables.com/F2H/DHKE/JOWSKSO7/F2HDHKEJOWSKSO7.RECTANGLE1.jpg?auto=webp" style="display: inline; opacity: 1;"></a><div class="caption"><h3><a href="https://www.instructables.com/id/DIY-4X5-Camera-Scan-Back/">DIY 4X5 Camera Scan Back</a></h3><footer><p>by <a href="https://www.instructables.com/member/randofo/">randofo</a> in
+                        
+                            <a href="https://www.instructables.com/technology/">Technology</a></p></footer></div></article></li><li><article><a href="https://www.instructables.com/id/A-Laser-Beam-Combiner-With-Parametric-Optomechanic/"><img alt="A Laser Beam Combiner With 3d Printed Parametric Optomechanical Components." class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FC6N37QJOWTHZ0N.jpg" data-src="https://cdn.instructables.com/FC6/N37Q/JOWTHZ0N/FC6N37QJOWTHZ0N.RECTANGLE1.jpg?auto=webp" style="display: inline; opacity: 1;"></a><div class="caption"><h3><a href="https://www.instructables.com/id/A-Laser-Beam-Combiner-With-Parametric-Optomechanic/">A Laser Beam Combiner With 3d Printed Parametric Optomechanical Components.</a></h3><footer><p>by <a href="https://www.instructables.com/member/Spiegelbout/">Spiegelbout</a> in
+                        
+                            <a href="https://www.instructables.com/technology/3D-Printing/">3d Printing</a></p></footer></div></article></li><li><article><a href="https://www.instructables.com/id/Put-Legs-on-Your-Smart-Speaker/"><img alt="Put Legs on Your Smart Speaker" class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FW2QW5EJOMTKYIH.jpg" data-src="https://cdn.instructables.com/FW2/QW5E/JOMTKYIH/FW2QW5EJOMTKYIH.RECTANGLE1.jpg?auto=webp" style="display: inline; opacity: 1;"></a><div class="caption"><h3><a href="https://www.instructables.com/id/Put-Legs-on-Your-Smart-Speaker/">Put Legs on Your Smart Speaker</a></h3><footer><p>by <a href="https://www.instructables.com/member/Toglefritz/">Toglefritz</a> in
+                        
+                            <a href="https://www.instructables.com/technology/3D-Printing/">3d Printing</a></p></footer></div></article></li><li><article><a href="https://www.instructables.com/class/3D-Printing-With-Circuits-Class/"><img alt="3D Printing With Circuits Class" class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F6TBRB3J7GGGQ7P.jpg" data-src="https://cdn.instructables.com/F6T/BRB3/J7GGGQ7P/F6TBRB3J7GGGQ7P.RECTANGLE1.jpg?auto=webp" style="display: inline; opacity: 1;"></a><div class="caption"><img alt="3D Printing With Circuits Class" class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FA1G314J66Q8EQM.jpg" data-src="https://cdn.instructables.com/FA1/G314/J66Q8EQM/FA1G314J66Q8EQM.SQUARE2.jpg?auto=webp" style="display: block; opacity: 1;"><h3><a href="https://www.instructables.com/id/3D-Printing-With-Circuits-Class/">3D Printing With Circuits Class</a></h3><footer><p>5,514 Enrolled</p></footer></div></article></li></ul><ul class="list-unstyled contests"><li><h3 class="sr-only">Puzzle Challenge</h3><a href="https://www.instructables.com/contest/puzzle/"><img class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FFV241LJO8XPGHA.jpg" data-src="https://cdn.instructables.com/FFV/241L/JO8XPGHA/FFV241LJO8XPGHA.MEDIUM.jpg?auto=webp" alt="Puzzle Challenge" style="display: inline; opacity: 1;"></a></li><li><h3 class="sr-only">First Time Author</h3><a href="https://www.instructables.com/contest/firsttimeauthor2018/"><img class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FRKUK7TJO8XSYCW.jpg" data-src="https://cdn.instructables.com/FRK/UK7T/JO8XSYCW/FRKUK7TJO8XSYCW.MEDIUM.jpg?auto=webp" alt="First Time Author" style="display: inline; opacity: 1;"></a></li><li><h3 class="sr-only">Make it Glow Contest 2018</h3><a href="https://www.instructables.com/contest/makeitglow2018/"><img class="lazy-img-scroll" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FVXPR1WJO8XSYUV.jpg" data-src="https://cdn.instructables.com/FVX/PR1W/JO8XSYUV/FVXPR1WJO8XSYUV.MEDIUM.jpg?auto=webp" alt="Make it Glow Contest 2018" style="display: inline; opacity: 1;"></a></li></ul></section><div id="discuss" class="comment-type-selector"><div class="discuss discuss-all">
+    
+    <div class="postbox">
+        
+        <img class="poster" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/user.png">
+        
+        <div class="field redactor-container">
+            
+                <button class="tip js-tip">Add Tip</button>
+                <button class="question js-question">Ask Question</button>
+                <button class="comment js-comment">Post Comment</button>
+            
+        </div>
+    </div>
+    <div class="image-bucket clearfix"></div>    
+    <div class="alert alert-danger alert-error"></div> 
+       
+    <div class="actions">
+        
+            <p class="policy">We have a <b>be nice</b> policy.<br> Please be positive and constructive.</p>
+        
+        
+        <button class="btn add-image-btn" disabled="disabled">
+            <img class="uploading-indicator" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/ajax_loader_48px.gif"> Add Images
+        </button>
+        <button class="btn btn-orange post-btn" disabled="disabled">
+            <img class="posting-indicator" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/ajax_loader_48px.gif"> Post
+        </button>
+    </div>
+</div></div><section id="comments" class="discussion"><h2>11 Discussions</h2><div class="posts js-posts" style="min-height: initial;"><article class="post js-post  " data-id="CAP8TNMIUYD4UAH" data-stepid="">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/pwave/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FQVMA7THZ13I9MN.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/pwave/">pwave</a>
+                
+                <p class="posted-date">         
+                    
+
+                    
+                    2 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        I have 3 motors on my z axis! Any diagram how to connect 3 motors in series? 
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+        <a class="hidden-replies-link js-show-replies" role="button">
+            1
+            
+                reply
+            
+            <i class="icon-arrow-down"></i>
+        </a>
+    
+    
+    
+</article><article class="post js-post reply hide" data-id="C1OLGELJJOK4S82" data-stepid="" data-inreplyto="pwave">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/CatherS1/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FMVRU3MJJOK4S7K.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/CatherS1/">CatherS1</a>
+                
+                    <i class="icon-arrow-right"></i>
+                    <a class="replied-to js-reply-parent" href="https://www.instructables.com/member/pwave/">pwave</a> 
+                
+                <p class="posted-date">         
+                    
+                         Reply
+                    
+                    4 months ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        <p>Take the connection to the second motor in the series, repeat the process.</p>
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+    
+    
+</article><article class="post js-post  " data-id="CKHE9LFJ7ARNT44" data-stepid="">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/Alex76/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FT7IFY3IV0AH1M8.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/Alex76/">Alex76</a>
+                
+                <p class="posted-date">         
+                    
+
+                    
+                    a year ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        <p>Hello,</p><p>good explanation for a noob also, I'm setting my
+ new printer with dual Z axis Nema17 motors (from Anet A8) and a MKS Gen
+ with DRV8825. In this way, if I connect the motors in serial mode to 
+the DRV8825 (board powered at 12V),  what's the VREF should I use?</p><p>I think my motors are similar to SL42STH40-1684A (2,8V / 1.65ohm / 1.68A).</p><p>Thanks for your help</p>
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+        <a class="hidden-replies-link js-show-replies" role="button">
+            1
+            
+                reply
+            
+            <i class="icon-arrow-down"></i>
+        </a>
+    
+    
+    
+</article><article class="post js-post reply hide" data-id="CFO5MMEJ7ARNTWG" data-stepid="" data-inreplyto="Alex76">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/Alex76/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FT7IFY3IV0AH1M8.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/Alex76/">Alex76</a>
+                
+                    <i class="icon-arrow-right"></i>
+                    <a class="replied-to js-reply-parent" href="https://www.instructables.com/member/Alex76/">Alex76</a> 
+                
+                <p class="posted-date">         
+                    
+                         Reply
+                    
+                    a year ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        <p>Note: at this time my board it's set up on double Z drivers 
+(E1 used for second Z axis), VREF of two drivers is 0,64V (with 1/16 
+microstep) and it's working fine even though motors warms up a bit. But 
+now I need the second extruder so this's the reason for changes..</p>
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+    
+    
+</article><article class="post js-post  " data-id="C5H8I9UIL15NF94" data-stepid="">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/srah1/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FQZDTCLINKJNPRR.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/srah1/">srah1</a>
+                
+                <p class="posted-date">         
+                    
+
+                    
+                    3 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        Great 'ible. I'm going to try this and also mechanical 
+synchronisationof the z axis motors, using gt2 belt and pulleys, will 
+compare<br><br>
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+    
+    
+</article><article class="post js-post  " data-id="CHSPF7YIKWVEHXD" data-stepid="">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/Spiky1987/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F0DFQHSGPBDFHHE.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/Spiky1987/">Spiky1987</a>
+                
+                <p class="posted-date">         
+                    
+
+                    
+                    3 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        <p>How can the motor have the same torque if you apply half the 
+voltage to it ? Putting both motors in series makes a voltage divider, 
+yes you have the same current across the line but you have half the 
+voltage ... it means less torque. And, augmenting the inductance will 
+make the second motor having more trouble to get it's current due to the
+  L di/dt formula. <br><br>I have the same problem on my prusaI3, the "tok tok" of the z axis due to the autolevel feature.</p>
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+        <a class="hidden-replies-link js-show-replies" role="button">
+            2
+            
+                replies
+            
+            <i class="icon-arrow-down"></i>
+        </a>
+    
+    
+    
+</article><article class="post js-post reply hide" data-id="CQUXR8FIKYGB3EP" data-stepid="" data-inreplyto="Spiky1987">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/AddictiveMfg/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FA14CZCIQW1GFSX.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author owner" href="https://www.instructables.com/member/AddictiveMfg/">AddictiveMfg</a>
+                
+                    <i class="icon-arrow-right"></i>
+                    <a class="replied-to js-reply-parent" href="https://www.instructables.com/member/Spiky1987/">Spiky1987</a> 
+                
+                <p class="posted-date">         
+                    
+                         Reply
+                    
+                    3 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        Motor torque is a function of current, not voltage. 
+&nbsp;Normally the current would be dependent on the voltage, but the 
+stepper drivers are using PWM, along with the inductance of the motor 
+coils to regulate the current.<br> <br> As long as you have enough 
+voltage to hit your desired current level, it is fine. &nbsp;For example
+ the motors I use are rated 4.2V, 2.8Ohm, 1.5A per phase. By the way the
+ voltage rating for a stepper motor is just based on ohms law given the 
+resistance and current rating for a coil. So V = IR , 4.2V = 1.5A * 2.8 
+Ohm<br> So in order to reach the max rated current on this motor you 
+will need at least 4.2V. Since my power supply is 12V(pretty standard) 
+even putting two in series is still over that threshold: 12V &gt; 8.4V. 
+So the holding torque can be the same when supplying 12V to two 4.2V 
+motors in series. Also that assumes running the motors at their max 
+rating, which I don't, I usually set my stepper drivers to about 
+1.2A,requiring even less voltage than stated.<br> <br> One other thing 
+to keep in mind is that in order to have the current setting the same 
+per motor, when going from parallel to series, you will need to adjust 
+the trim pot on the stepper driver, since that current is split between 
+the motors in parallel, but not when in series.<br> <br> Lastly the 
+effect of increasing the inductance of the system is that the stepper 
+driver can't alter the current as quickly; L di/dt as you mentioned. The
+ consequence of this is limiting the absolute maximum speed that the 
+stepper motors can turn. &nbsp;But they aren't being driven close to 
+that limit for typical z axis, so its not an issue.
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+    
+    
+</article><article class="post js-post reply hide" data-id="C3J87MHIKYCYTKG" data-stepid="" data-inreplyto="AddictiveMfg">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/Spiky1987/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F0DFQHSGPBDFHHE.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/Spiky1987/">Spiky1987</a>
+                
+                    <i class="icon-arrow-right"></i>
+                    <a class="replied-to js-reply-parent" href="https://www.instructables.com/member/AddictiveMfg/">AddictiveMfg</a> 
+                
+                <p class="posted-date">         
+                    
+                         Reply
+                    
+                    3 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        <p>Well thank you ! I knew that the torque is a function of the 
+magnetic flux that os function of the frequency and the voltage for ac 
+motors. I'm not used to stepper formula. Your answer is complete and 
+seems pretty accurate. Thanks a lot for the explanation, I will try it 
+this week when my driver board will be repaired !!</p>
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+    
+    
+</article><article class="post js-post  " data-id="CUMULICIKSL1XPP" data-stepid="">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/baecker03/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/default.png">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/baecker03/">baecker03</a>
+                
+                <p class="posted-date">         
+                    
+
+                    
+                    3 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        I would read through the data sheet to ensure the driver will 
+handle the impedance.  when the motors are wired in parallel, the 
+resistance is halved, which causes the motors to pull additional 
+current.  this causes the driver to most likely over work/over heat 
+which causes it to skip steps.
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+        <a class="hidden-replies-link js-show-replies" role="button">
+            1
+            
+                reply
+            
+            <i class="icon-arrow-down"></i>
+        </a>
+    
+    
+    
+</article><article class="post js-post reply hide" data-id="COEXTE6IKVFTBOI" data-stepid="" data-inreplyto="baecker03">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/AddictiveMfg/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/FA14CZCIQW1GFSX.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author owner" href="https://www.instructables.com/member/AddictiveMfg/">AddictiveMfg</a>
+                
+                    <i class="icon-arrow-right"></i>
+                    <a class="replied-to js-reply-parent" href="https://www.instructables.com/member/baecker03/">baecker03</a> 
+                
+                <p class="posted-date">         
+                    
+                         Reply
+                    
+                    3 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        <p>The types of stepper drivers used in have built in current 
+sensing, there is a trim pot for setting the target current, changing 
+motor impedance alone does not affect the current setting.</p>
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+    
+    
+</article><article class="post js-post  " data-id="C9QZV4OIKRNKT1S" data-stepid="">
+    <div class="post-header">
+        <div class="meta">
+            
+                <div class="votes js-vote-count hide">0</div>
+            
+
+            <div class="avatar">
+                <a href="https://www.instructables.com/member/rpotts2/">
+                    <img src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/F1MLXKPHZIHAXE4.jpg">
+                </a>
+            </div>
+            <div class="posted-by">
+                <a class="author" href="https://www.instructables.com/member/rpotts2/">rpotts2</a>
+                
+                <p class="posted-date">         
+                    
+
+                    
+                    3 years ago
+                    
+                </p>
+            </div>
+        </div>
+        <div class="toolbar"><div class="action dropdown flag-dropdown hide">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-flag"></i></a>
+    <ul class="dropdown-menu">
+        <li><a class="js-flag" data-flagname="not_nice">Not Nice</a></li>
+        <li><a class="js-flag" data-flagname="inappropriate">Inappropriate</a></li>
+        <li><a class="js-flag" data-flagname="spam">Spam</a></li>
+    </ul>
+</div>
+
+    
+    <button class="btn reply-btn js-reply">
+        Reply
+    </button>
+    <button class="btn vote-btn js-vote-btn">Upvote</button>
+
+
+
+</div>
+
+    </div>
+    
+    <div class="text js-text">
+        <p class="quarantine-message"></p>
+        I always wondered how I could get a large bed to offset correctly...
+    </div>
+    
+    <div class="js-edit-container"></div>
+    
+    <div class="photos js-photos"></div>
+    <div class="attachments js-attachments"></div>
+    
+    
+    
+    
+</article></div><button class="btn btn-orange comment-btn js-show-poster">Post Comment</button></section></div><div class="sidebar"><div class="ad-block-wrapper"><div class="ad-block"><div id="gpt-ad-med-rectangle" class="gpt-ad"><script>
+                renderAdSlot('gpt-ad-med-rectangle');
+            </script></div></div></div><div id="ible-stickyad-wrapper" class="ad-block-wrapper" style="height: 269px;"><div id="ible-stickyad" style="top: auto; bottom: auto; position: relative;"><div id="gpt-ad-sidebar-brand" class="gpt-ad"><script>
+                renderAdSlot('gpt-ad-sidebar-brand');
+            </script></div></div></div></div></div><aside class="sticky-header">
+	<nav id="hamburger-menu" class="dl-menuwrapper">
+		<button class="dl-trigger"><i class="svg-icon svg-hamburger"></i><span class="sr-only">Open Menu</span></button>
+		<ul class="dl-menu"><li class="search-menu"><a class="main-menu" href="https://www.instructables.com/howto/"><i class="icon-search1"></i>Search</a></li><li class="explore-menu"><a class="main-menu" href="#"><svg class="svg-icon views" viewBox="0 0 24 24"><use xlink:href="/assets/svg/sprite.svg#views"></use></svg>Explore</a><ul class="dl-submenu category-menu"><li class="dl-back"><a href="#">back</a></li><li class="explorefeatured-menu"><a class="submenu" href="https://www.instructables.com/featured"><div class="sprite-image featured"></div>Featured</a></li><li class="explorerecent-menu"><a class="submenu" href="https://www.instructables.com/recent"><div class="sprite-image recent"></div>Recent</a></li><li class="technology-menu"><a class="submenu" href="#"><div class="sprite-image technology"></div>Technology</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/technology/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/3D-Printing/">3D Printing</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/apple/">Apple</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/arduino/">Arduino</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/art/">Art</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/assistive-technology/">Assistive Tech</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/audio/">Audio</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/clocks/">Clocks</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/cnc/">CNC</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/computers/">Computers</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/digital-graphics/">Digital Graphics</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/electronics/">Electronics</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/gadgets/">Gadgets</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/kits/">Kits</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/laptops/">Laptops</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/lasers/">Lasers</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/leds/">LEDs</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/linux/">Linux</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/microcontrollers/">Microcontrollers</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/microsoft/">Microsoft</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/mobile/">Mobile</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/photography/">Photography</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/raspberry-pi/">Raspberry Pi</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/remote-control/">Remote Control</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/reuse/">Reuse</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/robots/">Robots</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/science/">Science</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/sensors/">Sensors</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/software/">Software</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/soldering/">Soldering</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/speakers/">Speakers</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/steampunk/">Steampunk</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/tools/">Tools</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/usb/">USB</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/wearables/">Wearables</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/websites/">Websites</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/technology/wireless/">Wireless</a></li></ul></li><li class="workshop-menu"><a class="submenu" href="#"><div class="sprite-image workshop"></div>Workshop</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/workshop/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/cardboard/">Cardboard</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/cars/">Cars</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/electric-vehicles/">Electric Vehicles</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/energy/">Energy</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/furniture/">Furniture</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/home-improvement/">Home Improvement</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/home-theater/">Home Theater</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/hydroponics/">Hydroponics</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/laser-cutting/">Laser Cutting</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/lighting/">Lighting</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/metalworking/">Metalworking</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/molds-and-casting/">Molds &amp; Casting</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/motorcycles/">Motorcycles</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/organizing/">Organizing</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/pallets/">Pallets</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/repair/">Repair</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/shelves/">Shelves</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/solar/">Solar</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/tools/">Tools</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/woodworking/">Woodworking</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/workshop/workbenches/">Workbenches</a></li></ul></li><li class="craft-menu"><a class="submenu" href="#"><div class="sprite-image craft"></div>Craft</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/craft/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/art/">Art</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/books-and-journals/">Books &amp; Journals</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/cards/">Cards</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/clay/">Clay</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/duct-tape/">Duct Tape</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/embroidery/">Embroidery</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/fashion/">Fashion</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/felt/">Felt</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/fiber-arts/">Fiber Arts</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/gifts-and-wrapping/">Gifts &amp; Wrapping</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/jewelry/">Jewelry</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/knitting-and-crocheting/">Knitting &amp; Crocheting</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/leather/">Leather</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/mason-jars/">Mason Jars</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/no-sew/">No-Sew</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/paper/">Paper</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/parties-and-weddings/">Parties &amp; Weddings</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/print-making/">Print Making</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/sewing/">Sewing</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/soap/">Soap</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/craft/wallets/">Wallets</a></li></ul></li><li class="home-menu"><a class="submenu" href="#"><div class="sprite-image home"></div>Home</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/home/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/beauty/">Beauty</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/christmas/">Christmas</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/cleaning/">Cleaning</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/decorating/">Decorating</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/education/">Education</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/finances/">Finances</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/gardening/">Gardening</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/green/">Green</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/halloween/">Halloween</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/health/">Health</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/hiding-places/">Hiding Places</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/holidays/">Holidays</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/homesteading/">Homesteading</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/kids/">Kids</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/kitchen/">Kitchen</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/life-hacks/">Life Hacks</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/life-skills/">Life Skills</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/organizing/">Organizing</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/parenting/">Parenting</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/pest-control/">Pest Control</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/pets/">Pets</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/relationships/">Relationships</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/reuse/">Reuse</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/home/travel/">Travel</a></li></ul></li><li class="food-menu"><a class="submenu" href="#"><div class="sprite-image food"></div>Food</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/food/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/bacon/">Bacon </a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/bbq-and-grilling/">BBQ &amp; Grilling</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/beverages/">Beverages</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/bread/">Bread</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/breakfast/">Breakfast</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/cake/">Cake</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/candy/">Candy</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/canning-and-preserves/">Canning &amp; Preserves</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/cocktails-and-mocktails/">Cocktails &amp; Mocktails</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/coffee/">Coffee</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/cookies/">Cookies</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/cupcakes/">Cupcakes</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/dessert/">Dessert</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/homebrew/">Homebrew</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/main-course/">Main Course</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/pasta/">Pasta</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/pie/">Pie</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/pizza/">Pizza</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/salad/">Salad</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/sandwiches/">Sandwiches</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/snacks-and-appetizers/">Snacks &amp; Appetizers</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/soups-and-stews/">Soups &amp; Stews</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/food/vegetarian-and-vegan/">Vegetarian &amp; Vegan</a></li></ul></li><li class="play-menu"><a class="submenu" href="#"><div class="sprite-image play"></div>Play</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/play/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/airsoft/">Airsoft</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/card-games/">Card Games</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/guitars/">Guitars</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/instruments/">Instruments</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/knex/">K'NEX</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/lego/">LEGO</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/magic-tricks/">Magic Tricks</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/minecraft/">Minecraft</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/music/">Music</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/nerf/">Nerf</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/nintendo/">Nintendo</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/offbeat/">Offbeat</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/office-supplies/">Office Supplies</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/paintball/">Paintball</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/paper-airplanes/">Paper Airplanes</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/party-tricks/">Party Tricks</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/playstation/">PlayStation</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/pranks-and-humor/">Pranks and Humor</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/puzzles/">Puzzles</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/siege-engines/">Siege Engines</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/sports/">Sports</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/table-top/">Table Top</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/toys/">Toys</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/video-games/">Video Games</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/wii/">Wii</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/xbox/">Xbox</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/play/yo-yo/">Yo-Yo</a></li></ul></li><li class="outside-menu"><a class="submenu" href="#"><div class="sprite-image outside"></div>Outside</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/outside/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/backyard/">Backyard</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/beach/">Beach</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/bikes/">Bikes</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/birding/">Birding</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/boats/">Boats</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/camping/">Camping</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/climbing/">Climbing</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/fire/">Fire</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/fishing/">Fishing</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/hunting/">Hunting</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/kites/">Kites</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/knives/">Knives</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/knots/">Knots</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/paracord/">Paracord</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/rockets/">Rockets</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/skateboarding/">Skateboarding</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/snow/">Snow</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/survival/">Survival</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/outside/water/">Water</a></li></ul></li><li class="costumes-menu"><a class="submenu" href="#"><div class="sprite-image costumes"></div>Costumes</a><ul class="dl-submenu channels-menu"><li class="dl-back"><a href="#">back</a></li><li><a href="https://www.instructables.com/costumes/">All</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/animals/">Animals</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/comics/">Comics</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/fantasy/">Fantasy</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/for-kids/">For Kids</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/for-pets/">For Pets</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/funny/">Funny</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/games/">Games</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/historic-and-futuristic/">Historic &amp; Futuristic</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/makeup/">Makeup</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/masks/">Masks</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/props-and-accessories/">Props &amp; Accessories</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/scary/">Scary</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/tv-and-movies/">TV &amp; Movies</a></li><li class="channel clearfix"><a class="clearfix" href="https://www.instructables.com/costumes/weapons-and-armor/">Weapons &amp; Armor</a></li></ul></li></ul></li><li class="class-menu"><a class="main-menu" href="https://www.instructables.com/classes/"><svg class="svg-icon book" viewBox="0 0 24 24"><use xlink:href="/assets/svg/sprite.svg#book"></use></svg>Classes</a></li><li class="following-menu logged-in-item visible"><a class="main-menu" href="https://www.instructables.com/feed/"><svg class="svg-icon following" viewBox="0 0 24 24"><use xlink:href="/assets/svg/sprite.svg#following"></use></svg>Feed</a></li><li class="contests-menu"><a class="main-menu" href="https://www.instructables.com/contest/"><svg class="svg-icon contest" viewBox="0 0 24 24"><use xlink:href="/assets/svg/sprite.svg#contest"></use></svg>Contests</a></li><li class="community-menu"><a class="main-menu" href="https://www.instructables.com/topics/"><svg class="svg-icon comments" viewBox="0 0 24 24"><use xlink:href="/assets/svg/sprite.svg#comments"></use></svg>Community</a></li><li class="create-menu"><a class="main-menu" href="#"><svg class="svg-icon instructable" viewBox="0 0 24 24"><use xlink:href="/assets/svg/sprite.svg#instructable"></use></svg>Publish</a><ul class="dl-submenu create-submenu"><li class="dl-back"><a href="#">back</a></li><li><a class="submenu new-instructable" href="https://www.instructables.com/editInstructable/new/">New Instructable</a></li><li><a class="submenu open-drafts" href="https://www.instructables.com/editInstructable/drafts/">Drafts</a></li><li><a class="submenu open-published" href="https://www.instructables.com/editInstructable/published/">Published</a></li><li><a class="submenu why-create" href="https://www.instructables.com/create/">Why Publish Instructables?</a></li><li><a class="submenu how-to-write" href="https://www.instructables.com/class/How-to-Write-an-Instructable-Class/">Writing an Instructable</a></li></ul></li><li class="logged-out-item passthrough"><a class="main-menu login-link" data-sourcea="menu:login">Login</a><a class="main-menu signup-link" data-sourcea="menu:signup">Signup</a></li><li class="logged-in-item visible" id="auth-container"><div id="auth-section" class="clearfix">
+    <a href="https://www.instructables.com/member/TrueArtWeExpress/" class="main-menu pull-left" data-bypass="true"><img class="avatar" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/user.png"> Profile</a>
+    
+        <div class="actions">
+            <a class="btn btn-default btn-logout">Logout</a>
+            <a class="btn btn-orange btn-gopro payment-interest" data-sourcea="you-menu" href="https://www.instructables.com/account/gopro/">Upgrade »</a>
+        </div>
+    
+</div></li></ul>
+	</nav>
+    <span class="byline">
+        <span class="title">Wiring Your Z Stepper Motors in Series</span> by <a class="author" rel="author" href="https://www.instructables.com/member/AddictiveMfg/">AddictiveMfg</a><button class="btn btn-yellow follow-btn">Follow</button>
+    </span>
+    <span class="ible-actions">
+        
+        <button class="pdf-btn" data-role-group="pdf" data-sourcea="download"><i class="svg-icon svg-pdf"></i>Download</button>
+        
+        <button class="favorite-btn"><i class="svg-icon svg-favorite"></i><span class="favorite-txt">Favorite</span></button>
+        <button class="view-comments-btn"><i class="svg-icon svg-comments"></i><span class="sr-only">View Comments</span></button>
+        <button class="share-menu-btn"><i class="svg-icon svg-share"></i><span class="sr-only">Share</span></button>
+        <button class="more-menu-btn"><i class="svg-icon svg-ellipsis"></i><span class="sr-only">More Options</span></button>
+    </span>
+    <div class="dropdown share-menu">
+        <button class="btn btn-facebook fb-btn"><i class="svg-icon svg-facebook"></i> Facebook</button>
+        <button class="btn btn-twitter twit-btn"><i class="svg-icon svg-twitter"></i> Twitter</button>
+        <button class="btn btn-danger pin-btn"><i class="svg-icon svg-pinterest"></i> Pinterest</button>
+    </div>
+    <div class="dropdown more-menu" style="display: none;">
+        <button class="btn flag-menu-btn">Flag</button>
+        <ul class="flag-menu unstyled hide">
+            <li><a class="flag-btn" data-as="wrong-category">Wrong Category</a></li>
+            <li><a class="flag-btn" data-as="inappropriate">Inappropriate</a></li>
+            <li><a class="flag-btn" data-as="incomplete">Incomplete</a></li>
+            <li><a class="flag-btn" data-as="spam">Spam</a></li>
+        </ul>
+        <button class="btn add-to-collection-btn">Add To Collection</button>
+        <button class="btn add-to-contest-btn author-action">Add To Contest</button>
+        <button class="btn edit-btn author-action">Edit</button>
+    </div>
+</aside></article><div id="admin-container"></div></main><footer id="gbl-footer"><div class="container"><div class="row-fluid"><div class="footer-robot robot-icon technology"></div><div class="col" id="footer-categories"><h3>Categories</h3><ul><li class="technology active"><a href="https://www.instructables.com/technology/" title="Technology"><div class="category-icon technology active"></div>Technology</a></li><li class="workshop"><a href="https://www.instructables.com/workshop/" title="Workshop"><div class="category-icon workshop"></div>Workshop</a></li><li class="craft"><a href="https://www.instructables.com/craft/" title="Craft"><div class="category-icon craft"></div>Craft</a></li><li class="home"><a href="https://www.instructables.com/home/" title="Home"><div class="category-icon home"></div>Home</a></li></ul><ul><li class="food"><a href="https://www.instructables.com/food/" title="Food"><div class="category-icon food"></div>Food</a></li><li class="play"><a href="https://www.instructables.com/play/" title="Play"><div class="category-icon play"></div>Play</a></li><li class="outside"><a href="https://www.instructables.com/outside/" title="Outside"><div class="category-icon outside"></div>Outside</a></li><li class="costumes"><a href="https://www.instructables.com/costumes/" title="Costumes"><div class="category-icon costumes"></div>Costumes</a></li></ul></div><div class="col" id="footer-aboutus"><h3>About Us</h3><ul><li><a href="https://www.instructables.com/about/" title="About Us">Who We Are</a></li><li><a href="https://www.instructables.com/create/" title="Why Publish">Why Publish?</a></li><li><a href="https://www.instructables.com/topics/Positions-available-at-Instructables/" title="Jobs">Jobs</a></li><li><a href="https://www.instructables.com/contact/" title="Contact">Contact</a></li></ul></div><div class="col" id="footer-resources"><h3>Resources</h3><ul><li><a href="http://www.autodesk.com/pier-9/residency/home" title="Residency Program">Residency Program</a></li><li><a href="https://www.instructables.com/topics/" title="Forums">Community</a></li><li><a href="https://www.instructables.com/sitemap/" title="Sitemap">Sitemap</a></li><li><a href="https://www.instructables.com/id/how-to-write-a-great-instructable/" title="Help">Help</a></li></ul></div><div class="col" id="footer-findus"><h3>Find Us</h3><ul><li><a class="instagram" href="http://www.instagram.com/instructables/" title="Instagram"><img alt="instagram" id="instagram-share" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/icon-share-instagram.svg"></a></li><li><a class="pinterest" href="http://www.pinterest.com/instructables" title="Pinterest"><img alt="pinterest" id="pinterest-share" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/icon-share-pinterest.svg"></a></li><li><a class="facebook" href="http://www.facebook.com/instructables" title="Facebook"><img alt="facebook" id="facebook-share" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/icon-share-facebook.svg"></a></li><li><a class="twitter" href="http://www.twitter.com/instructables" title="Twitter"><img alt="twitter" id="twitter-share" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/icon-share-twitter.svg"></a></li></ul></div></div></div><div class="container content-match"><div class="row-fluid"><hr><div class="pull-right" id="footer-links"><p><a href="http://www.autodesk.com/" id="adsk-logo" target="blank" title="Autodesk"><img alt="autodesk" src="Wiring%20Your%20Z%20Stepper%20Motors%20in%20Series%20%205%20Steps%20(with%20Pictures)_bestanden/autodesk-make-anything-logo-white-small.png"></a></p></div><div id="copyright-notice"><p>© 2018 Autodesk, Inc.</p><ul><li><a href="http://usa.autodesk.com/adsk/servlet/item?siteID=123112&amp;id=21959721" target="_blank" title="Terms of Service">Terms of Service</a><span class="divider">|</span></li><li><a href="http://usa.autodesk.com/adsk/servlet/item?siteID=123112&amp;id=21292079" target="_blank" title="Privacy Statement">Privacy Statement</a><span class="divider">|</span></li><li><a data-opt-in-preferences="">Privacy settings</a><span class="divider">|</span></li><li><a href="http://usa.autodesk.com/legal-notices-trademarks/" target="_blank">Legal Notices &amp; Trademarks</a></li></ul></div></div></div></footer><script id="js-page-context" type="application/json">{"category":"technology","recaptchaSiteKey":"6Le9TAwTAAAAADEB44pkYQS2fm7hroFthrNqnoAb","sourceCookie":"iblesource","paymentPlans":{"quarterly":"QUARTERLY_SUBSCRIPTION","course":"CLASS_SUBSCRIPTION","annual":"ANNUAL_SUBSCRIPTION","twoYearSinglePayment":null},"ibleData":{"commentingEnabled":true,"featureFlag":true,"shareImageUrl":"https://cdn.instructables.com/ORIG/FFE/JL9B/IKRNG2YJ/FFEJL9BIKRNG2YJ.png?width=481","indexTags":["internal"],"publishDate":"2016-02-17 18:46:29.0","id":"E3GRRUIIJD78UQ1","category":"technology","author":{"tinyUrl":"https://cdn.instructables.com/FA1/4CZC/IQW1GFSX/FA14CZCIQW1GFSX.TINY.jpg","id":"MAPE6XQIGH2GURY","screenName":"AddictiveMfg"},"coverImage":{"rectangle1Url":"https://cdn.instructables.com/FFE/JL9B/IKRNG2YJ/FFEJL9BIKRNG2YJ.RECTANGLE1.jpg"},"title":"Wiring Your Z Stepper Motors in Series","urlString":"Wiring-Your-Z-Stepper-Motors-in-Series","typeChar":"E","pgFlag":false,"type":"Step by Step","fullUrl":"https://www.instructables.com/id/Wiring-Your-Z-Stepper-Motors-in-Series/","channel":"3D-Printing"},"staticRoot":"/assets/","loggedInCookie":"authy","nativeApp":false,"userCookie":"ibleuser","cacheUrls":["http://www.instructables.com/id/Wiring-Your-Z-Stepper-Motors-in-Series/","http://api.instructables.com/json-api/showInstructableModel?versionId=&r=&anyStatus=false&id=Wiring-Your-Z-Stepper-Motors-in-Series","http://api.instructables.com/json-api/searchComments?instructableId=E3GRRUIIJD78UQ1&IMadeIt=true","http://api.instructables.com/json-api/getComments?commentId=&instructableId=E3GRRUIIJD78UQ1&limit=20&IMadeIt=false","http://api.instructables.com/json-api/searchInstructables?sort=&featuredHomePage=true&limit=20&offset=0&additionalParams=-indexTags%3AdesignOnly%2C+%2B%28category%3Atechnology+OR+channel%3A3D-Printing%29&type=id","http://api.instructables.com/json-api/searchInstructables?sort=&isCourse=true&limit=20&offset=0&additionalParams=%2B%28indexTags%3AfeaturedTechnology+OR+indexTags%3Afeatured3dPrinting%29&type=guide","http://api.instructables.com/json-api/getContests?sort=added&limit=50&offset=0","http://api.instructables.com/json-api/adSpot?itemCode=RECOMMENDED_CONTESTS_BACKUP_CATEGORIES"],"remoteRoot":"https://www.instructables.com/","featureFlags":{},"currentLocale":"en_US","disableEmailVerifyWidget":false,"sessionCookie":"JSESSIONID","mobile":false,"remoteHost":"https://www.instructables.com","oauthGetAuthUrl":"https://www.instructables.com/oauth/getAuthUrl/","facebookAppId":"140028286058792","commitInfo":{"commit_message":"Merge pull request #2708 from sirbolkins/IN-844_topic_testsIN-844 *Lesson backbone tests","git_hash":"b5479f6"},"gtmContainerID":"GTM-PLDK3K","oauthCallbackUrl":"https://www.instructables.com/oauth/callback/","cookieSyncDomains":["https://www.instructables.community","https://www.instructables.com"],"channel":"3D-Printing"}</script><script>
+    headJsLoaded(function(head){
+        head.test({
+            test: Ibles.isLoggedIn,
+            success: ["/assets/BUNDLES/ible_desktop_logged_in_js.min.js?c=b5479f6"],
+            failure: ["/assets/BUNDLES/ible_desktop_logged_out_js.min.js?c=b5479f6"],
+            callback: function() {
+                
+                var model = new Ibles.models.InstructableModel(_.extend({
+                    disableComments: false,
+                    allSteps: true,
+                    fetchUserData: true,
+                    fetchStats: true
+                }, Ibles.pageContext.ibleData));
+
+                var view = new Ibles.views.DesktopInstructableView({
+                    el: "#article",
+                    model: model
+                });
+                
+            }
+        });
+    });
+    </script></body></html>

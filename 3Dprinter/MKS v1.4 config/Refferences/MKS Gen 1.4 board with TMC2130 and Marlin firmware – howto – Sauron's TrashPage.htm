@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html slick-uniqueid="3" lang="pl-PL"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://adrian.siemieniak.net/portal/xmlrpc.php">
+
+<title>MKS Gen 1.4 board with TMC2130 and Marlin firmware – howto – Sauron's TrashPage</title>
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Sauron's TrashPage » Kanał z wpisami" href="https://adrian.siemieniak.net/portal/feed/">
+<link rel="alternate" type="application/rss+xml" title="Sauron's TrashPage » Kanał z komentarzami" href="https://adrian.siemieniak.net/portal/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Sauron's TrashPage » MKS Gen 1.4 board with TMC2130 and Marlin firmware – howto Kanał z komentarzami" href="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/adrian.siemieniak.net\/portal\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="avatar-manager-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/avatar-manager.css" type="text/css" media="all">
+<link rel="stylesheet" id="cookie-notice-front-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/front.css" type="text/css" media="all">
+<link rel="stylesheet" id="foobox-free-min-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/foobox.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdiscuz-font-awesome-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/fontawesome-all.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdiscuz-frontend-css-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wpdiscuz.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpdiscuz-user-content-css-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wpdiscuz-user-content.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="shaped-blog-stylesheet-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/style_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-css-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="enlighter-local-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/EnlighterJS.css" type="text/css" media="all">
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery_003.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery-migrate.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/avatar-manager.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var cnArgs = {"ajaxurl":"https:\/\/adrian.siemieniak.net\/portal\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"yes","onScrollOffset":"100","cookieName":"cookie_notice_accepted","cookieValue":"true","cookieTime":"2147483647","cookiePath":"\/portal\/","cookieDomain":"","redirection":"","cache":"","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/front.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/customcookie.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery_004.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"url":"https:\/\/adrian.siemieniak.net\/portal\/wp-admin\/admin-ajax.php","customAjaxUrl":"https:\/\/adrian.siemieniak.net\/portal\/wp-content\/plugins\/wpdiscuz\/utils\/ajax\/wpdiscuz-ajax.php","wpdiscuz_options":{"wc_hide_replies_text":"Ukryj odpowiedzi","wc_show_replies_text":"View Replies","wc_msg_required_fields":"Prosz\u0119 wype\u0142nij wymagane pola","wc_invalid_field":"Jedna z warto\u015bci pola jest nieprawid\u0142owa","wc_error_empty_text":"prosz\u0119 wype\u0142ni\u0107 te pole, aby m\u00f3c doda\u0107 komentarz","wc_error_url_text":"url jest nieprawid\u0142owy","wc_error_email_text":"adres e-mail jest nieprawid\u0142owy","wc_invalid_captcha":"Nieprawid\u0142owy kod Captcha","wc_login_to_vote":"Musisz si\u0119 zalogowa\u0107, aby m\u00f3c odda\u0107 g\u0142os","wc_deny_voting_from_same_ip":"Nie wolno g\u0142osowa\u0107 na ten komentarz","wc_self_vote":"Nie mo\u017cesz g\u0142osowa\u0107 na sw\u00f3j komentarz","wc_vote_only_one_time":"Ju\u017c zag\u0142osowa\u0142e\u015b na ten komentarz","wc_voting_error":"B\u0142\u0105d g\u0142osowania","wc_held_for_moderate":"Komentarz oczekuje na moderacj\u0119","wc_comment_edit_not_possible":"Przepraszamy, tego komentarza nie mo\u017cna ju\u017c edytowa\u0107","wc_comment_not_updated":"Przepraszamy, komentarz nie zosta\u0142 zaktualizowany","wc_comment_not_edited":"Jeszcze nie dokona\u0142e\u015b zmian","wc_new_comment_button_text":"nowy komentarz","wc_new_comments_button_text":"nowych komentarzy","wc_new_reply_button_text":"nowa odpowied\u017a na Tw\u00f3j komentarz","wc_new_replies_button_text":"nowych odpowiedzi na Tw\u00f3j komentarz","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_follow_user":"Follow this user","wc_unfollow_user":"Unfollow this user","wc_follow_success":"You started following this comment author","wc_follow_canceled":"You stopped following this comment author.","wc_follow_email_confirm":"Please check your email and confirm the user following request.","wc_follow_email_confirm_fail":"Sorry, we couldn't send confirmation email.","wc_follow_login_to_follow":"Please login to follow users.","wc_follow_impossible":"We are sorry, but you can't follow this user.","wc_follow_not_added":"Following failed. Please try again later.","is_user_logged_in":false,"commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"30","liveUpdateGuests":"1","wc_comment_bg_color":"#FEFEFE","wc_reply_bg_color":"#F8F8F8","wpdiscuzCommentsOrder":"asc","wpdiscuzCommentOrderBy":"comment_date_gmt","commentsVoteOrder":false,"wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"1","commentTextMaxLength":null,"storeCommenterData":100000,"isCaptchaInSession":true,"isGoodbyeCaptchaActive":false,"socialLoginAgreementCheckbox":0,"enableFbLogin":0,"enableFbShare":0,"facebookAppID":"","facebookUseOAuth2":0,"enableGoogleLogin":0,"googleAppID":"","cookiehash":"9f8a2918bc5c27c5a9c44e872158b679","isLoadOnlyParentComments":0,"ahk":"","enableDropAnimation":0,"isNativeAjaxEnabled":1,"cookieCommentsSorting":"wpdiscuz_comments_sorting","version":"5.2.2","wc_post_id":837,"loadLastCommentId":0,"lastVisitKey":"wordpress_last_visit","lastVisitExpires":1546041805,"lastVisitCookie":{"1":{"837":1543449805}},"isCookiesEnabled":true,"wc_captcha_show_for_guest":"1","wc_captcha_show_for_members":"0","is_email_field_required":"1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wpdiscuz.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpdiscuzUCObj = {"msgConfirmDeleteComment":"Are you sure you want to delete this comment?","msgConfirmCancelSubscription":"Are you sure you want to cancel this subscription?","msgConfirmCancelFollow":"Are you sure you want to cancel this follow?"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wpdiscuz-user-content.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/lity.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/foobox.js"></script>
+<link rel="https://api.w.org/" href="https://adrian.siemieniak.net/portal/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://adrian.siemieniak.net/portal/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://adrian.siemieniak.net/portal/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Engraving, cutting 5.5W laser – description and proper connection" href="https://adrian.siemieniak.net/portal/engraving-cutting-5-5w-laser-description/">
+<link rel="next" title="Gimp 2.10 RC1 for Debian!" href="https://adrian.siemieniak.net/portal/gimp-2-10-rc1-for-debian/">
+<meta name="generator" content="WordPress 4.9.8">
+<link rel="canonical" href="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/">
+<link rel="shortlink" href="https://adrian.siemieniak.net/portal/?p=837">
+<link rel="alternate" type="application/json+oembed" href="https://adrian.siemieniak.net/portal/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fadrian.siemieniak.net%2Fportal%2Fmks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://adrian.siemieniak.net/portal/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fadrian.siemieniak.net%2Fportal%2Fmks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto%2F&amp;format=xml">
+<style>
+	#lightGallery-slider .info .desc
+	{
+		direction: ltr !important;
+		text-align: center !important;
+	}
+	#lightGallery-slider .info .title
+	{
+		direction: ltr !important;
+		text-align: center !important;
+	}
+	</style>      <script type="text/javascript">
+         var string = ".wp-lightbox-bank,", ie, ieVersion, lightease;
+         jQuery(document).ready(function ($) {
+                     string = ".gallery-item, ";
+                        string += ".wp-caption > a, ";
+                        string += "a:has(img[class*=wp-image-])";
+                     if (navigator.appName == "Microsoft Internet Explorer") {
+               //Set IE as true
+               ie = true;
+               //Create a user agent var
+               var ua = navigator.userAgent;
+               //Write a new regEx to find the version number
+               var re = new RegExp("MSIE ([0-9]{1,}[.0-9]{0,})");
+               //If the regEx through the userAgent is not null
+               if (re.exec(ua) != null) {
+                  //Set the IE version
+                  ieVersion = parseInt(RegExp.$1);
+               }
+            }
+            if (ie = true && ieVersion <= 9)
+            {
+               lightease = "";
+            } else
+            {
+               lightease = "ease";
+            }
+            var selector = string.replace(/,\s*$/, "");
+            jQuery(selector).lightGallery({
+               caption: true,
+               desc: true,
+               disableOther: false,
+               closable: true,
+               errorMessage: "Could not load the item. Make sure the path is correct and item exist.",
+               easing: lightease
+            });
+         });
+
+      </script>
+                  <style>
+                #wpcomm .wc_new_comment{background:#00B38F;}
+                #wpcomm .wc_new_reply{background:#00B38F;}
+                #wpcomm .wc-form-wrapper{ background:none; } /* ->formBGColor */
+                #wpcomm .wpdiscuz-front-actions{background:#F9F9F9;}
+                #wpcomm .wpdiscuz-subscribe-bar{background:#F9F9F9;}
+                #wpcomm select,
+                #wpcomm input[type="text"],
+                #wpcomm input[type="email"],
+                #wpcomm input[type="url"],
+                #wpcomm input[type="date"],
+                #wpcomm input[type="color"]{border:#D9D9D9 1px solid;}
+                #wpcomm .wc-comment .wc-comment-right{background:#FEFEFE;}
+                #wpcomm .wc-reply .wc-comment-right{background:#F8F8F8;}
+                #wpcomm .wc-comment-right .wc-comment-text, 
+                #wpcomm .wc-comment-right .wc-comment-text *{
+                    font-size:14px;
+                }
+                #wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-administrator > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-administrator > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-editor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-editor > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-author > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-contributor > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-contributor > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-subscriber > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-subscriber > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-post_author > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-post_author > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }#wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author, #wpcomm .wc-blog-guest > .wc-comment-right .wc-comment-author a{color:#00B38F;}#wpcomm .wc-blog-guest > .wc-comment-left .wc-comment-label{color:#00B38F; border:none; border-bottom: 1px solid #dddddd; }                #wpcomm .wc-comment .wc-comment-left .wc-comment-label{ background: #ffffff;}
+                #wpcomm .wc-comment-left .wc-follow-user{color:#00B38F;}
+                #wpcomm .wc-load-more-submit{border:1px solid #D9D9D9;}
+                #wpcomm .wc-new-loaded-comment > .wc-comment-right{background:#FFFAD6;}
+                #wpcomm .wpdiscuz-subscribe-bar{color:#777;}
+                #wpcomm .wpdiscuz-front-actions .wpdiscuz-sbs-wrap span{color: #777;}
+                #wpcomm .page-numbers{color:#555;border:#555 1px solid;}
+                #wpcomm span.current{background:#555;}
+                #wpcomm .wpdiscuz-readmore{cursor:pointer;color:#00B38F;}
+                #wpcomm .wpdiscuz-textarea-wrap{border:#D9D9D9 1px solid;} .wpd-custom-field .wcf-pasiv-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label {color: #DDDDDD;}
+                #wpcomm .wpdiscuz-item .wpdiscuz-rating:not(:checked) > label:hover,.wpdiscuz-rating:not(:checked) > label:hover ~ label {   }#wpcomm .wpdiscuz-item .wpdiscuz-rating > input ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label{color: #FFED85;} 
+                #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label:hover ~ input:checked ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked + label:hover ~ label, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover ~ label, .wpd-custom-field .wcf-activ-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label{ color:#FFD700;}
+                #wpcomm .wc-comment-header{border-top: 1px solid #dedede;}
+                #wpcomm .wc-reply .wc-comment-header{border-top: 1px solid #dedede;}
+                /* Buttons */
+                #wpcomm button, 
+                #wpcomm input[type="button"], 
+                #wpcomm input[type="reset"], 
+                #wpcomm input[type="submit"]{ border: 1px solid #555555; color: #FFFFFF; background-color: #555555; }
+                #wpcomm button:hover, 
+                #wpcomm button:focus,
+                #wpcomm input[type="button"]:hover, 
+                #wpcomm input[type="button"]:focus, 
+                #wpcomm input[type="reset"]:hover, 
+                #wpcomm input[type="reset"]:focus, 
+                #wpcomm input[type="submit"]:hover, 
+                #wpcomm input[type="submit"]:focus{ border: 1px solid #333333; background-color: #333333;  }
+                #wpcomm .wpdiscuz-sort-buttons{color:#777777;}
+                #wpcomm .wpdiscuz-sort-button{color:#777777; cursor:pointer;}
+                #wpcomm .wpdiscuz-sort-button:hover{color:#00B38F!important;cursor:pointer;}
+                #wpcomm .wpdiscuz-sort-button-active{color:#00B38F!important;cursor:default!important;}
+                #wpcomm .wc-cta-button, 
+                #wpcomm .wc-cta-button-x{color:#777777; }
+                #wpcomm .wc-vote-link.wc-up{color:#999999;}
+                #wpcomm .wc-vote-link.wc-down{color:#999999;}
+                #wpcomm .wc-vote-result{color:#999999;}
+                #wpcomm .wpf-cta{color:#999999; }
+                #wpcomm .wc-comment-link .wc-share-link .wpf-cta{color:#eeeeee;}
+                #wpcomm .wc-footer-left .wc-reply-button{border:1px solid #00B38F!important; color: #00B38F;}
+                #wpcomm .wpf-cta:hover{background:#00B38F!important; color:#FFFFFF;}
+                #wpcomm .wc-footer-left .wc-reply-button.wc-cta-active, #wpcomm .wc-cta-active{background:#00B38F!important; color:#FFFFFF;}
+                #wpcomm .wc-cta-button:hover{background:#00B38F!important; color:#FFFFFF;}
+                #wpcomm .wc-footer-right .wc-toggle,
+                #wpcomm .wc-footer-right .wc-toggle a,
+                #wpcomm .wc-footer-right .wc-toggle i{color:#00B38F;}
+                /* STICKY COMMENT HEADER */
+                #wpcomm .wc-sticky-comment.wc-comment .wc-comment-header{}
+                #wpcomm .wc-sticky-comment.wc-comment .wc-comment-header .wpd-sticky{background: #1ecea8; color: #ffffff; }
+                #wpcomm .wc-closed-comment.wc-comment .wc-comment-header{}
+                #wpcomm .wc-closed-comment.wc-comment .wc-comment-header .wpd-closed{background: #aaaaaa; color: #ffffff;}
+                /* PRIVATE COMMENT HEADER */
+                #wpcomm .wc-private-comment.wc-comment .wc-comment-header{}
+                #wpcomm .wc-private-comment.wc-comment .wc-comment-header .wpd-private{background: #999999; color: #ffffff;}
+                /* FOLLOW LINK */
+
+                #wpcomm .wc-follow{color:#777777;}
+                #wpcomm .wc-follow-active{color:#ff7a00;}
+                #wpcomm .wc-follow:hover i,
+                #wpcomm .wc-unfollow:hover i,
+                #wpcomm .wc-follow-active:hover i{color:#00B38F;}
+                                .wpd-wrapper .wpd-list-item.wpd-active{border-top: 3px solid #00B38F;}
+                                .comments-area{width:auto;}
+            </style>
+            
+	<style>
+
+		/* Border Color */
+		.btn-social:hover,
+		blockquote,
+		#respond input:focus[type="text"], 
+	    #respond input:focus[type="email"], 
+	    #respond input:focus[type="url"],
+	    #respond textarea:focus,
+	    #comments .comment-reply a:hover
+		{
+			border-color: #890000;
+		}
+
+		
+		/* Background Color */
+		.scroll-up a,
+		.btn-social:hover,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.navbar-default .navbar-nav .dropdown-menu li a:hover, .dropdown-menu li a:focus, .navbar-default .navbar-nav .dropdown-menu .active a,
+		.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover, .pagination li .current,
+		.next-previous-posts .next-post a:hover,
+		.next-previous-posts .previous-post a:hover,
+		.btn-goback,
+		.btn-submit,
+		a.more-link,
+		.featured-post .fa,
+		#comments .comment-reply a:hover,
+		.widget .tagcloud a
+		{
+			background-color: #890000;
+		}
+
+		
+		/* Color */
+		.text-logo a,
+		.navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:hover, .navbar-default .navbar-nav .active a:focus,
+		.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:focus,
+		a:hover,
+    	a:focus,
+		.next-previous-posts .previous-post a,
+		.next-previous-posts .next-post a,
+		.pagination>li>a, .pagination>li>span,
+		#comments .comment-author a:hover, 
+    	#respond .logged-in-as a:hover,
+    	#wp-calendar a,
+    	h2.entry-title a:hover
+		{
+			color: #890000;
+		}
+
+
+		/* A Color */
+		a{
+			color: #ba6265;
+		}
+
+		/* a:hover Color */
+		a:hover,
+		a:focus,
+		a:active,
+		.widget a:hover,
+		.post .post-content .entry-meta ul li a:hover
+		{
+			color: #ad0005;
+		}
+
+		/* .featured-post .fa:after*/
+		.featured-post .fa:after{
+			border-color: #890000 #890000 transparent #890000;
+		}
+
+
+		
+
+	</style>
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f2f2f2; }
+</style>
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="post-template-default single single-post postid-837 single-format-standard custom-background group-blog wpdiscuz_5.2.2 cookies-set cookies-accepted">
+
+    <div id="st-preloader" style="display: none;">
+        <div id="pre-status" style="display: none;">
+            <div class="preload-placeholder"></div>
+        </div>
+    </div>
+<!-- /Preloader -->
+
+<header id="header">	
+	<div id="trueHeader">
+    	<div class="wrapper">
+            <div class="container">
+            	<!-- Menu -->
+            	<div class="menu_main">
+                	<div class="navbar blogx-navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#st-navber-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                                                            <div class="text-logo">
+                                    <a href="https://adrian.siemieniak.net/portal">Sauron's TrashPage</a>
+                                    <p>Just another bunch of trash :)</p>
+                                </div><!-- /Logo -->
+                                                    </div>
+                      
+                        <div id="st-navber-collapse" class="navbar-collapse collapse pull-right">
+                            <ul id="menu-top-navigation" class="menu nav navbar-nav"><li id="menu-item-498" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-498"><a title="Polski/Polish" href="https://adrian.siemieniak.net/portal/category/polski/">Polski/Polish</a></li>
+<li id="menu-item-499" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-499"><a title="English/Angielski" href="https://adrian.siemieniak.net/portal/category/english/">English/Angielski</a></li>
+<li id="menu-item-500" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-500"><a title="Mixed" href="https://adrian.siemieniak.net/portal/category/mixed/">Mixed</a></li>
+<li id="menu-item-781" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-781 dropdown"><a title="About" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true">About <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-782"><a title="About" href="https://adrian.siemieniak.net/portal/about/">About</a></li>
+	<li id="menu-item-780" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-780"><a title="Contact" href="https://adrian.siemieniak.net/portal/kontakt/">Contact</a></li>
+</ul>
+</li>
+</ul> 
+                        </div>
+                    </div>
+            	</div><!-- end menu -->
+        	</div> <!-- /.container -->
+    	</div>
+	</div>
+</header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main" role="main">
+
+                        
+                                <article id="post-837" class="post-837 post type-post status-publish format-standard hentry category-english tag-3d-printer tag-infitary tag-marlin tag-mks-board tag-mks-gen-1-4 tag-tmc2130">
+    <header class="entry-header">
+        
+        
+    </header> <!--/.entry-header -->
+
+    <div class="clearfix post-content media">
+
+        <h2 class="entry-title">
+            MKS Gen 1.4 board with TMC2130 and Marlin firmware – howto        </h2> <!-- //.entry-title -->
+
+        <div class="clearfix entry-meta">
+            
+            <ul class="list-inline">
+                <li>
+                    <span class="author vcard">
+                        By <a class="url fn n" href="https://adrian.siemieniak.net/portal/author/sauron/">Sauron</a>                    </span>
+                </li>
+                <li>
+                    on <span class="posted-on">Mar 11, 2018</span>
+                </li>
+                                    <li>
+                        in <span class="posted-in">
+                            <a href="https://adrian.siemieniak.net/portal/category/english/" rel="category tag">English/Angielski</a>                        </span>
+                    </li>
+                            </ul>
+                </div> <!--/.entry-meta -->
+        
+        <div class="entry-summary">
+            <p><a href="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/TMC2130.jpg"><img class="alignright wp-image-839 size-medium" title="TMC2130 with and without SPI" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/TMC2130-300x280.jpg" alt="" srcset="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/TMC2130-300x280.jpg 300w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/TMC2130-768x716.jpg 768w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/TMC2130-1024x954.jpg 1024w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/TMC2130.jpg 1245w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="280"></a>I
+ wanted to change my Infitary HiB3 stepstick drivers with TMC2130, 
+mostly to get it working more quietly but also because the perspective 
+(meaby someday…) of other nice features of Prusa i3 MK3 where appealing.
+ Sadly Infitary has all motor drivers SMD soldered so I had to get 
+everything new. I ordered (what seems to be the best value-money choice)
+ Chinese MKS 1.4 board and pack of 5 TMC2130 v1.1 stepper drivers. The 
+only difference (except the price ;)) between Chinese 1.0 and 1.1 TMC 
+stepsticks is that 1.0 are soldered to be used without SPI feedback 
+data. You could change them manually from 1.0 to 1.1 (you would need to 
+resolder 3 jumpers and change side of 4 connectors – see picture), but I
+ assumed it’s too much hassle and I went with 1.1 directly<span id="more-837"></span></p>
+<p><a href="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKSgen1.4.jpg"><img class="alignright size-medium wp-image-842" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/MKSgen1.jpg" alt="" srcset="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKSgen1.4-300x235.jpg 300w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKSgen1.4-768x601.jpg 768w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKSgen1.4.jpg 952w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="235"></a>The
+ MKS 1.4 board is a simple ATmega2560 board with RAMPs 1.4 compatible 
+connectors. It’s nice all-in-one solution, with almost everything you 
+could possibly need for cheap 3d printer and a bit more:</p>
+<ul>
+<li>You can power it up with 12-24V power supply,</li>
+<li>you can have 3 axis drivers, 1 extruder driver and optionally 
+additional extruder or axis driver. In my case, I have 2 Z-axis steppers
+ so the E1 is going to be Z2. I could go with (like in my previous 
+board) one Z-axis driver powering two steppers, but it’s rather ugly 
+solution and since we want to have some „intelligence” out of our TMC 
+drivers – this wouldn’t work well.</li>
+<li>it has all endstops, fan and heated bed connectors,</li>
+<li>two LCD connectors and</li>
+<li>and two AUX ports.</li>
+</ul>
+<h2>Let’s begin…</h2>
+<p><a href="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/2018-03-11-22.34.40.jpg"><img class="alignright size-medium wp-image-846" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/2018-03-11-22.jpg" alt="MKS Gen 1.4 board with TMC2130" srcset="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/2018-03-11-22.34.40-300x197.jpg 300w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/2018-03-11-22.34.40-768x505.jpg 768w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/2018-03-11-22.34.40-1024x673.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="197"></a>I’ve
+ used TMC drivers for all stepper motors, you could save some money and 
+use it only for X/Y axis (perhaps Z) – but I ordered set of 5, and used 
+all 5. I also used TMC 2130 feature to eliminate X and Y endstops (I 
+still have mechanical Z min. endstop). Finally I have LCD with SD card 
+reader – this is important, since I had to change pins 53 and 49 from 
+„default” configuration (like for example Tom <a href="https://toms3d.org/2017/12/09/tmc2130-guide/">presented</a>)
+ to utilize unused endstops pins, to be able to use SD card still. I’ve 
+also wanted to use interrupts for every working endstop (for ATMEGA this
+ are 2, 3, 18, 19, 20, 21) – so there are also some small changes from 
+original setup.</p>
+<ol>
+<li>Remove all jumpers,&nbsp; that are going to be under TMC2130 driver (this could make you a lot of weird troubles if you forget <img draggable="false" class="emoji" alt="😉" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/1f609.svg"> )</li>
+<li>Put driver boards in place, remembering about correct orientation 
+(match descriptions on MKS board with those on TMC board) – in my case, 
+SPI pins where on green side (lower one)</li>
+<li>Connect 3 common lines from every driver to pins on AUX 3 socket 
+(SPI connection schema). I’ve prepared for myself, 3 cables with 6 
+connectors each soldered together</li>
+<li>Connect CS line from every TMC driver to different pin on the MKS 
+Board – pins from X and Y TMC drivers are connected to endstop pins, so 
+SD card reader could work <img draggable="false" class="emoji" alt="🙂" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/1f642.svg"></li>
+<li>Connect X and Y TMC endstop signal to <del>X min and X max</del> Y min and Y max endstop pins (this is also different, because we want to use interrupts – respectively pins 2 and 3)</li>
+</ol>
+<div id="dgwt-jg-1" class="dgwt-jg-gallery dgwt-jg-1 dgwt-jg-lightbox-photoswipe dgwt-jg-effect-standard justified-gallery" data-last_row="nojustify" data-margin="3" data-border="-1" data-row_height="260" data-max_row_height="-1" style="height: 1231.55px;"><figure class="dgwt-jg-item jg-entry entry-visible" data-size="1843x1232" data-sub-html="&lt;h4&gt;SPI connection&lt;/h4&gt;" style="width: 664px; height: 444.88px; top: 3px; left: 3px;"><a href="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_SPI_connection.jpg"><img src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/MKS_Board_SPI_connection-768x513.jpg" alt="MKS Board with TMC 20130 - SPI connection" data-jg-srcset="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_SPI_connection-300x201.jpg 300w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_SPI_connection-768x513.jpg 768w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_SPI_connection-1024x685.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" style="width: 664px; height: 445px; margin-left: -332px; margin-top: -222.5px;"><figcaption class="dgwt-jg-caption"><span class="dgwt-jg-caption__font--14">SPI connection</span></figcaption></a></figure><figure class="dgwt-jg-item jg-entry entry-visible" data-size="1843x1232" data-sub-html="&lt;h4&gt;Endstops connection&lt;/h4&gt;" style="width: 664px; height: 444.88px; top: 450.88px; left: 3px;"><a href="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_endstops_connection.jpg"><img src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/MKS_Board_endstops_connection-768x513.jpg" alt="MKS Board - endstops connection" data-jg-srcset="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_endstops_connection-300x201.jpg 300w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_endstops_connection-768x513.jpg 768w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_Board_endstops_connection-1024x685.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" style="width: 664px; height: 445px; margin-left: -332px; margin-top: -222.5px;"><figcaption class="dgwt-jg-caption"><span class="dgwt-jg-caption__font--14">Endstops connection</span></figcaption></a></figure><figure class="dgwt-jg-item jg-entry entry-visible" data-size="1124x557" data-sub-html="&lt;h4&gt;Board pinounts&lt;/h4&gt;" style="width: 664px; height: 329.787px; top: 898.76px; left: 3px;"><a href="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_GEN-PIN2.png"><img src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/MKS_GEN-PIN2-768x381.png" alt="MKS Gen 1.4 pinouts" data-jg-srcset="https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_GEN-PIN2-300x149.png 300w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_GEN-PIN2-768x381.png 768w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_GEN-PIN2-1024x507.png 1024w, https://adrian.siemieniak.net/portal/wp-content/uploads/2018/03/MKS_GEN-PIN2.png 1124w" sizes="(max-width: 300px) 100vw, 300px" style="width: 664px; height: 330px; margin-left: -332px; margin-top: -165px;"><figcaption class="dgwt-jg-caption"><span class="dgwt-jg-caption__font--14">Board pinounts</span></figcaption></a></figure></div>
+
+<h2>&nbsp;Now the software…</h2>
+<div>Some basics steps you should take to customize firmware for this 
+configuration. In my case (March 2018) I had to use 1.1.x bugfix Marlin 
+to make everything work properly (mainly quick homing option). Or you 
+can download what <a href="http://adrian.siemieniak.net/files/Printer3D/Marlin-1.1.x-bugfix.tar.gz">I’ve prepared</a> <img draggable="false" class="emoji" alt="🙂" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/1f642.svg"></div>
+<ul>
+<li>do a clone of git bugfix repo („<em>git clone -b bugfix-1.1.x https://github.com/MarlinFirmware/Marlin</em>„)</li>
+<li>add TMC library to Arduino IDE. Choose from „Sketch” menu, „Include library” -&gt; „Manage library” and search „TMC2130Stepper”</li>
+<li>You have to edit those files
+<ul>
+<li>Configuration.h</li>
+<li>Configuration_adv.h</li>
+<li>pins_RAMPS.h</li>
+</ul>
+</li>
+</ul>
+<p><span style="color: #ff0000;"><strong>Warning! This are only steps 
+that are somehow different from standard configuration. Unless you’ve 
+downloaded prepared config, you have to do other changes for your 
+printer!</strong></span></p>
+<h3>Configuration.h</h3>
+<p>Define board:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">// The following define selects which electronics board you have.
+// Please choose the name from boards.h that matches your setup
+#ifndef MOTHERBOARD
+ #define MOTHERBOARD BOARD_MKS_13
+#endif</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="">// The following define selects which electronics board you have.</span></li><li class=" even"><span class="">// Please choose the name from boards.h that matches your setup</span><span class="co1"></span></li><li class=" odd"><span class="co1">#ifndef MOTHERBOARD</span><span class="co1"></span></li><li class=" even"><span class="co1"> #define MOTHERBOARD BOARD_MKS_13</span><span class="co1"></span></li><li class=" odd"><span class="co1">#endif</span></li></ol><pre style="display: none;">// The following define selects which electronics board you have.
+// Please choose the name from boards.h that matches your setup
+#ifndef MOTHERBOARD
+ #define MOTHERBOARD BOARD_MKS_13
+#endif</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<p>Define endstops (X and Y are TMC – so they can work on both ends – min and max. Z is traditional, so only min):</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">// Specify here all the endstop connectors that are connected to any endstop or probe.
+// Almost all printers will be using one per axis. Probes will use one or more of the
+// extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
+#define USE_XMIN_PLUG
+#define USE_YMIN_PLUG
+#define USE_ZMIN_PLUG
+#define USE_XMAX_PLUG
+#define USE_YMAX_PLUG
+//#define USE_ZMAX_PLUG</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="">// Specify here all the endstop connectors that are connected to any endstop or probe.</span></li><li class=" even"><span class="">// Almost all printers will be using one per axis. Probes will use one or more of the</span></li><li class=" odd"><span class="">// extra connectors. Leave undefined any used </span><span class="kw1">for</span><span class=""> non-endstop and non-probe purposes.</span><span class="co1"></span></li><li class=" even"><span class="co1">#define USE_XMIN_PLUG</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define USE_YMIN_PLUG</span><span class="co1"></span></li><li class=" even"><span class="co1">#define USE_ZMIN_PLUG</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define USE_XMAX_PLUG</span><span class="co1"></span></li><li class=" even"><span class="co1">#define USE_YMAX_PLUG</span><span class=""></span></li><li class=" odd"><span class="">//#define USE_ZMAX_PLUG</span></li></ol><pre style="display: none;">// Specify here all the endstop connectors that are connected to any endstop or probe.
+// Almost all printers will be using one per axis. Probes will use one or more of the
+// extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
+#define USE_XMIN_PLUG
+#define USE_YMIN_PLUG
+#define USE_ZMIN_PLUG
+#define USE_XMAX_PLUG
+#define USE_YMAX_PLUG
+//#define USE_ZMAX_PLUG</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<p>Enable interrupts for endstops:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">// Enable this feature if all enabled endstop pins are interrupt-capable.
+// This will remove the need to poll the interrupt pins, saving many CPU cycles.
+#define ENDSTOP_INTERRUPTS_FEATURE</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="">// Enable this feature </span><span class="kw1">if</span><span class=""> all enabled endstop pins are interrupt-capable.</span></li><li class=" even"><span class="">// This will remove the need to poll the interrupt pins, saving many CPU cycles.</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define ENDSTOP_INTERRUPTS_FEATURE</span></li></ol><pre style="display: none;">// Enable this feature if all enabled endstop pins are interrupt-capable.
+// This will remove the need to poll the interrupt pins, saving many CPU cycles.
+#define ENDSTOP_INTERRUPTS_FEATURE</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<h3>Configuration_adv.h</h3>
+<p>Just speeds up homing – move X/Y at once:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">#define QUICK_HOME // If homing includes X and Y, do a diagonal move initially</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="co1">#define QUICK_HOME // If homing includes X and Y, do a diagonal move initially</span></li></ol><pre style="display: none;">#define QUICK_HOME // If homing includes X and Y, do a diagonal move initially</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<p>Enable TMC 2130 support:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">/**
+ * Enable this for SilentStepStick Trinamic TMC2130 SPI-configurable stepper drivers.
+ *
+ * You'll also need the TMC2130Stepper Arduino library
+ * (https://github.com/teemuatlut/TMC2130Stepper).
+ *
+ * To use TMC2130 stepper drivers in SPI mode connect your SPI pins to
+ * the hardware SPI interface on your board and define the required CS pins
+ * in your `pins_MYBOARD.h` file. (e.g., RAMPS 1.4 uses AUX3 pins `X_CS_PIN 53`, `Y_CS_PIN 49`, etc.).
+ * You may also use software SPI if you wish to use general purpose IO pins.
+ */
+#define HAVE_TMC2130</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="">/**</span></li><li class=" even"><span class=""> * Enable this </span><span class="kw1">for</span><span class=""> SilentStepStick Trinamic TMC2130 SPI-configurable stepper drivers.</span></li><li class=" odd"><span class=""> *</span></li><li class=" even"><span class=""> * You'll also need the TMC2130Stepper Arduino library</span></li><li class=" odd"><span class=""> * (https://github.com/teemuatlut/TMC2130Stepper).</span></li><li class=" even"><span class=""> *</span></li><li class=" odd"><span class=""> * To use TMC2130 stepper drivers </span><span class="kw1">in</span><span class=""> SPI mode connect your SPI pins to</span></li><li class=" even"><span class=""> * the hardware SPI interface on your board and define the required CS pins</span></li><li class=" odd"><span class=""> * </span><span class="kw1">in</span><span class=""> your </span><span class="st1">`pins_MYBOARD.h`</span><span class=""> file. (e.g., RAMPS 1.4 uses AUX3 pins </span><span class="st1">`X_CS_PIN 53`</span><span class="">, </span><span class="st1">`Y_CS_PIN 49`</span><span class="">, etc.).</span></li><li class=" even"><span class=""> * You may also use software SPI </span><span class="kw1">if</span><span class=""> you wish to use general purpose IO pins.</span></li><li class=" odd"><span class=""> */</span><span class="co1"></span></li><li class=" even"><span class="co1">#define HAVE_TMC2130</span></li></ol><pre style="display: none;">/**
+ * Enable this for SilentStepStick Trinamic TMC2130 SPI-configurable stepper drivers.
+ *
+ * You'll also need the TMC2130Stepper Arduino library
+ * (https://github.com/teemuatlut/TMC2130Stepper).
+ *
+ * To use TMC2130 stepper drivers in SPI mode connect your SPI pins to
+ * the hardware SPI interface on your board and define the required CS pins
+ * in your `pins_MYBOARD.h` file. (e.g., RAMPS 1.4 uses AUX3 pins `X_CS_PIN 53`, `Y_CS_PIN 49`, etc.).
+ * You may also use software SPI if you wish to use general purpose IO pins.
+ */
+#define HAVE_TMC2130</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<p>Enable wherever you have TMC 2130:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">#if&nbsp;ENABLED(HAVE_TMC2130)&nbsp;||&nbsp;ENABLED(HAVE_TMC2208)
+
+//&nbsp;CHOOSE&nbsp;YOUR&nbsp;MOTORS&nbsp;HERE,&nbsp;THIS&nbsp;IS&nbsp;MANDATORY
+#define&nbsp;X_IS_TMC2130
+//#define&nbsp;X2_IS_TMC2130
+#define&nbsp;Y_IS_TMC2130
+//#define&nbsp;Y2_IS_TMC2130
+#define&nbsp;Z_IS_TMC2130
+#define&nbsp;Z2_IS_TMC2130
+#define&nbsp;E0_IS_TMC2130
+//#define&nbsp;E1_IS_TMC2130
+//#define&nbsp;E2_IS_TMC2130</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="co1">#if ENABLED(HAVE_TMC2130) || ENABLED(HAVE_TMC2208)</span><span class=""></span></li><li class=" even"><span class=""></span></li><li class=" odd"><span class="">// CHOOSE YOUR MOTORS HERE, THIS IS MANDATORY</span><span class="co1"></span></li><li class=" even"><span class="co1">#define X_IS_TMC2130</span><span class=""></span></li><li class=" odd"><span class="">//#define X2_IS_TMC2130</span><span class="co1"></span></li><li class=" even"><span class="co1">#define Y_IS_TMC2130</span><span class=""></span></li><li class=" odd"><span class="">//#define Y2_IS_TMC2130</span><span class="co1"></span></li><li class=" even"><span class="co1">#define Z_IS_TMC2130</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define Z2_IS_TMC2130</span><span class="co1"></span></li><li class=" even"><span class="co1">#define E0_IS_TMC2130</span><span class=""></span></li><li class=" odd"><span class="">//#define E1_IS_TMC2130</span></li><li class=" even"><span class="">//#define E2_IS_TMC2130</span></li></ol><pre style="display: none;">#if ENABLED(HAVE_TMC2130) || ENABLED(HAVE_TMC2208)
+
+// CHOOSE YOUR MOTORS HERE, THIS IS MANDATORY
+#define X_IS_TMC2130
+//#define X2_IS_TMC2130
+#define Y_IS_TMC2130
+//#define Y2_IS_TMC2130
+#define Z_IS_TMC2130
+#define Z2_IS_TMC2130
+#define E0_IS_TMC2130
+//#define E1_IS_TMC2130
+//#define E2_IS_TMC2130</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<p>Enable SPI for TMC:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;"> /**
+ * Monitor Trinamic TMC2130 and TMC2208 drivers for error conditions,
+ * like overtemperature and short to ground. TMC2208 requires hardware serial.
+ * In the case of overtemperature Marlin can decrease the driver current until error condition clears.
+ * Other detected conditions can be used to stop the current print.
+ * Relevant g-codes:
+ * M906 - Set or get motor current in milliamps using axis codes X, Y, Z, E. Report values if no axis codes given.
+ * M911 - Report stepper driver overtemperature pre-warn condition.
+ * M912 - Clear stepper driver overtemperature pre-warn condition flag.
+ * M122 S0/1 - Report driver parameters (Requires TMC_DEBUG)
+ */
+ #define MONITOR_DRIVER_STATUS</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class=""> /**</span></li><li class=" even"><span class=""> * Monitor Trinamic TMC2130 and TMC2208 drivers </span><span class="kw1">for</span><span class=""> error conditions,</span></li><li class=" odd"><span class=""> * like overtemperature and short to ground. TMC2208 requires hardware serial.</span></li><li class=" even"><span class=""> * In the </span><span class="kw1">case</span><span class=""> of overtemperature Marlin can decrease the driver current </span><span class="kw1">until</span><span class=""> error condition clears.</span></li><li class=" odd"><span class=""> * Other detected conditions can be used to stop the current print.</span></li><li class=" even"><span class=""> * Relevant g-codes:</span></li><li class=" odd"><span class=""> * M906 - Set or get motor current </span><span class="kw1">in</span><span class=""> milliamps using axis codes X, Y, Z, E. Report values </span><span class="kw1">if</span><span class=""> no axis codes given.</span></li><li class=" even"><span class=""> * M911 - Report stepper driver overtemperature pre-warn condition.</span></li><li class=" odd"><span class=""> * M912 - Clear stepper driver overtemperature pre-warn condition flag.</span></li><li class=" even"><span class=""> * M122 S0/1 - Report driver parameters (Requires TMC_DEBUG)</span></li><li class=" odd"><span class=""> */</span><span class="co1"></span></li><li class=" even"><span class="co1"> #define MONITOR_DRIVER_STATUS</span></li></ol><pre style="display: none;"> /**
+ * Monitor Trinamic TMC2130 and TMC2208 drivers for error conditions,
+ * like overtemperature and short to ground. TMC2208 requires hardware serial.
+ * In the case of overtemperature Marlin can decrease the driver current until error condition clears.
+ * Other detected conditions can be used to stop the current print.
+ * Relevant g-codes:
+ * M906 - Set or get motor current in milliamps using axis codes X, Y, Z, E. Report values if no axis codes given.
+ * M911 - Report stepper driver overtemperature pre-warn condition.
+ * M912 - Clear stepper driver overtemperature pre-warn condition flag.
+ * M122 S0/1 - Report driver parameters (Requires TMC_DEBUG)
+ */
+ #define MONITOR_DRIVER_STATUS</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<p>Enable endstops:</p>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;"> /**
+ * Use stallGuard2 to sense an obstacle and trigger an endstop.
+ * You need to place a wire from the driver's DIAG1 pin to the X/Y endstop pin.
+ * X, Y, and Z homing will always be done in spreadCycle mode.
+ *
+ * X/Y/Z_HOMING_SENSITIVITY is used for tuning the trigger sensitivity.
+ * Higher values make the system LESS sensitive.
+ * Lower value make the system MORE sensitive.
+ * Too low values can lead to false positives, while too high values will collide the axis without triggering.
+ * It is advised to set X/Y/Z_HOME_BUMP_MM to 0.
+ * M914 X/Y/Z to live tune the setting
+ */
+
+ #define SENSORLESS_HOMING // TMC2130 only</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class=""> /**</span></li><li class=" even"><span class=""> * Use stallGuard2 to sense an obstacle and trigger an endstop.</span></li><li class=" odd"><span class=""> * You need to place a wire from the driver's DIAG1 pin to the X/Y endstop pin.</span></li><li class=" even"><span class=""> * X, Y, and Z homing will always be </span><span class="kw1">done</span><span class=""> </span><span class="kw1">in</span><span class=""> spreadCycle mode.</span></li><li class=" odd"><span class=""> *</span></li><li class=" even"><span class=""> * X/Y/Z_HOMING_SENSITIVITY is used </span><span class="kw1">for</span><span class=""> tuning the trigger sensitivity.</span></li><li class=" odd"><span class=""> * Higher values make the system LESS sensitive.</span></li><li class=" even"><span class=""> * Lower value make the system MORE sensitive.</span></li><li class=" odd"><span class=""> * Too low values can lead to false positives, </span><span class="kw1">while</span><span class=""> too high values will collide the axis without triggering.</span></li><li class=" even"><span class=""> * It is advised to set X/Y/Z_HOME_BUMP_MM to 0.</span></li><li class=" odd"><span class=""> * M914 X/Y/Z to live tune the setting</span></li><li class=" even"><span class=""> */</span><span class="co1"></span></li><li class=" odd"><span class="co1"></span></li><li class=" even"><span class="co1"> #define SENSORLESS_HOMING // TMC2130 only</span></li></ol><pre style="display: none;"> /**
+ * Use stallGuard2 to sense an obstacle and trigger an endstop.
+ * You need to place a wire from the driver's DIAG1 pin to the X/Y endstop pin.
+ * X, Y, and Z homing will always be done in spreadCycle mode.
+ *
+ * X/Y/Z_HOMING_SENSITIVITY is used for tuning the trigger sensitivity.
+ * Higher values make the system LESS sensitive.
+ * Lower value make the system MORE sensitive.
+ * Too low values can lead to false positives, while too high values will collide the axis without triggering.
+ * It is advised to set X/Y/Z_HOME_BUMP_MM to 0.
+ * M914 X/Y/Z to live tune the setting
+ */
+
+ #define SENSORLESS_HOMING // TMC2130 only</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<h3>pins_RAMPS.h</h3>
+<div>Finally change pins according&nbsp; to our connection on board.</div>
+<div></div>
+<div>Change limit switches pins, to interrupts pin and free two of them for X/Y CS signals:</div>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">//
+// Limit Switches
+//
+#define X_MIN_PIN 3
+#ifndef X_MAX_PIN
+ #define X_MAX_PIN 3
+//&nbsp;#define&nbsp;X_MAX_PIN 2
+#endif
+//#define Y_MIN_PIN 14
+#define Y_MIN_PIN 2
+#define Y_MAX_PIN 2
+//#define Y_MAX_PIN 15
+#define Z_MIN_PIN 18
+#define Z_MAX_PIN 19</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="">//</span></li><li class=" even"><span class="">// Limit Switches</span></li><li class=" odd"><span class="">//</span><span class="co1"></span></li><li class=" even"><span class="co1">#define X_MIN_PIN 3</span><span class="co1"></span></li><li class=" odd"><span class="co1">#ifndef X_MAX_PIN</span><span class="co1"></span></li><li class=" even"><span class="co1"> #define X_MAX_PIN 3</span><span class=""></span></li><li class=" odd"><span class="">//</span><span class="co1"> #define X_MAX_PIN 2</span><span class="co1"></span></li><li class=" even"><span class="co1">#endif</span><span class=""></span></li><li class=" odd"><span class="">//#define Y_MIN_PIN 14</span><span class="co1"></span></li><li class=" even"><span class="co1">#define Y_MIN_PIN 2</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define Y_MAX_PIN 2</span><span class=""></span></li><li class=" even"><span class="">//#define Y_MAX_PIN 15</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define Z_MIN_PIN 18</span><span class="co1"></span></li><li class=" even"><span class="co1">#define Z_MAX_PIN 19</span></li></ol><pre style="display: none;">//
+// Limit Switches
+//
+#define X_MIN_PIN 3
+#ifndef X_MAX_PIN
+ #define X_MAX_PIN 3
+// #define X_MAX_PIN 2
+#endif
+//#define Y_MIN_PIN 14
+#define Y_MIN_PIN 2
+#define Y_MAX_PIN 2
+//#define Y_MAX_PIN 15
+#define Z_MIN_PIN 18
+#define Z_MAX_PIN 19</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<div>Change CS pins for X/Y axis:</div>
+<pre class="EnlighterJSRAW" data-enlighter-language="shell" style="display: none;">//
+// Steppers
+//
+#define X_STEP_PIN 54
+#define X_DIR_PIN 55
+#define X_ENABLE_PIN 38
+#ifndef X_CS_PIN
+ #define X_CS_PIN 14 // Z Y_MIN_PIN
+// #define X_CS_PIN 53
+#endif
+
+#define Y_STEP_PIN 60
+#define Y_DIR_PIN 61
+#define Y_ENABLE_PIN 56
+#ifndef Y_CS_PIN
+ #define Y_CS_PIN 15 // Z Y_MAX_PIN
+// #define Y_CS_PIN 49
+#endif
+
+</pre><div class="EnlighterJSWrapper enlighterEnlighterJSWrapper"><ol class="hoverEnabled enlighterEnlighterJS EnlighterJS"><li class=" odd"><span class="">//</span></li><li class=" even"><span class="">// Steppers</span></li><li class=" odd"><span class="">//</span><span class="co1"></span></li><li class=" even"><span class="co1">#define X_STEP_PIN 54</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define X_DIR_PIN 55</span><span class="co1"></span></li><li class=" even"><span class="co1">#define X_ENABLE_PIN 38</span><span class="co1"></span></li><li class=" odd"><span class="co1">#ifndef X_CS_PIN</span><span class="co1"></span></li><li class=" even"><span class="co1"> #define X_CS_PIN 14 // Z Y_MIN_PIN</span><span class=""></span></li><li class=" odd"><span class="">//</span><span class="co1"> #define X_CS_PIN 53</span><span class="co1"></span></li><li class=" even"><span class="co1">#endif</span><span class="co1"></span></li><li class=" odd"><span class="co1"></span></li><li class=" even"><span class="co1">#define Y_STEP_PIN 60</span><span class="co1"></span></li><li class=" odd"><span class="co1">#define Y_DIR_PIN 61</span><span class="co1"></span></li><li class=" even"><span class="co1">#define Y_ENABLE_PIN 56</span><span class="co1"></span></li><li class=" odd"><span class="co1">#ifndef Y_CS_PIN</span><span class="co1"></span></li><li class=" even"><span class="co1"> #define Y_CS_PIN 15 // Z Y_MAX_PIN</span><span class=""></span></li><li class=" odd"><span class="">//</span><span class="co1"> #define Y_CS_PIN 49</span><span class="co1"></span></li><li class=" even"><span class="co1">#endif</span></li></ol><pre style="display: none;">//
+// Steppers
+//
+#define X_STEP_PIN 54
+#define X_DIR_PIN 55
+#define X_ENABLE_PIN 38
+#ifndef X_CS_PIN
+ #define X_CS_PIN 14 // Z Y_MIN_PIN
+// #define X_CS_PIN 53
+#endif
+
+#define Y_STEP_PIN 60
+#define Y_DIR_PIN 61
+#define Y_ENABLE_PIN 56
+#ifndef Y_CS_PIN
+ #define Y_CS_PIN 15 // Z Y_MAX_PIN
+// #define Y_CS_PIN 49
+#endif</pre><div class="EnlighterJSToolbar"><a class="EnlighterJSInfoButton" title="EnlighterJS Syntax Highlighter"></a><a class="EnlighterJSRawButton" title="Toggle RAW Code"></a><a class="EnlighterJSWindowButton" title="Open Code in new Window"></a><span class="clear"></span></div></div>
+<div>And that’s it, compile and send to the printer! Have a fine hacking <img draggable="false" class="emoji" alt="🙂" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/1f642.svg"></div>
+<div></div>
+<div>Here is quick example how quiet the printer is, after described modification:</div>
+<div><div class="fluid-width-video-wrapper" style="padding-top: 56.0714%;"><iframe src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/cZTc13CTxsU.htm" allowfullscreen="allowfullscreen" id="fitvid213109"></iframe></div></div>
+<div></div>
+<div>ps. About Marlin firmware I’ve prepared and <a href="http://adrian.siemieniak.net/files/Printer3D/Marlin-1.1.x-bugfix.tar.gz">linked here</a>
+ – this is firmware I configured for my upgraded Infitary printer 
+(X/Y/2xZ + E0). You can use it, but probably you may need to change axis
+ direction, bed dimensions and offset etc.</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+        </div> <!-- //.entry-summary -->
+        
+                    <div class="entry-tags"><b>Tags:</b> <a href="https://adrian.siemieniak.net/portal/tag/3d-printer/" rel="tag">3d printer</a>, <a href="https://adrian.siemieniak.net/portal/tag/infitary/" rel="tag">Infitary</a>, <a href="https://adrian.siemieniak.net/portal/tag/marlin/" rel="tag">Marlin</a>, <a href="https://adrian.siemieniak.net/portal/tag/mks-board/" rel="tag">mks board</a>, <a href="https://adrian.siemieniak.net/portal/tag/mks-gen-1-4/" rel="tag">mks gen 1.4</a>, <a href="https://adrian.siemieniak.net/portal/tag/tmc2130/" rel="tag">tmc2130</a></div>
+        
+    </div>
+
+</article> <!--/#post-->
+
+
+
+
+
+                                                                    <div class="post-nav-area">
+                                                    
+            <nav class="next-previous-post clearfix media" role="navigation">
+                <div class="row">
+                    <!-- Previous Post -->
+                    <div class="previous-post col-sm-6 pull-left">
+                        <div class="nav-previous"><i class="fa fa-angle-left"></i> <a href="https://adrian.siemieniak.net/portal/engraving-cutting-5-5w-laser-description/" rel="prev">Engraving, cutting 5.5W laser – description and proper connection</a></div>                    </div>
+
+                    <!-- Next Post -->
+                    <div class="next-post col-sm-6 pull-right text-right">
+                        <div class="nav-next"><a href="https://adrian.siemieniak.net/portal/gimp-2-10-rc1-for-debian/" rel="next">Gimp 2.10 RC1 for Debian!</a> <i class="fa fa-angle-right"></i></div>                    </div>
+                </div>
+            </nav><!-- .navigation -->
+            
+                                            </div>
+                                
+                                    <div class="wpdiscuz_top_clearing"></div>
+                    <div id="comments" class="comments-area">
+                    <div id="respond" style="width: 0;height: 0;clear: both;margin: 0;padding: 0;"></div>
+                                <h3 id="wc-comment-header">
+                                    <div class="wpdiscuz-comment-count">
+                        <div class="wpd-cc-value">17</div>
+                        <div class="wpd-cc-arrow"></div>
+                    </div>
+                                Dodaj komentarz            </h3>
+                    <div id="wpcomm" class="wpdiscuz_unauth wpd-default">
+            <div class="wpdiscuz-form-top-bar">
+                <div class="wpdiscuz-ftb-left">
+                                                            <div id="wc_show_hide_loggedin_username">
+                                            </div>
+                </div>
+                                <div class="wpd-clear"></div>
+            </div>
+
+
+                        <div class="wc_social_plugin_wrapper">
+                            </div>
+                    <div class="wc-form-wrapper wc-main-form-wrapper" id="wc-main-form-wrapper-0_0">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                                        <form class="wc_comm_form wc_main_comm_form" method="post" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap wpdiscuz-quicktags-enabled">
+
+                                                                                                        <div class="wc-field-avatararea">
+                                        <img alt="avatar" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/a.jpg" srcset="https://secure.gravatar.com/avatar/?s=80&amp;d=mm&amp;r=r 2x" class="avatar avatar-40 photo avatar-default" width="40" height="40">                                    </div>
+                                
+                                <div id="qt_wc-textarea-0_0_toolbar" class="quicktags-toolbar"><input type="button" id="qt_wc-textarea-0_0_strong" class="ed_button button button-small" aria-label="Pogrubienie" value="b"><input type="button" id="qt_wc-textarea-0_0_em" class="ed_button button button-small" aria-label="Kursywa" value="i"><input type="button" id="qt_wc-textarea-0_0_link" class="ed_button button button-small" aria-label="Wstaw odnośnik" value="link"><input type="button" id="qt_wc-textarea-0_0_wpdiscuz_blockquot" class="ed_button button button-small" title="Blockquote" value="b-quote"><input type="button" id="qt_wc-textarea-0_0_wpdiscuz_underline" class="ed_button button button-small" title="Underline" value="U"><input type="button" id="qt_wc-textarea-0_0_ul" class="ed_button button button-small" aria-label="Lista nieuporządkowana" value="ul"><input type="button" id="qt_wc-textarea-0_0_ol" class="ed_button button button-small" aria-label="Lista numerowana" value="ol"><input type="button" id="qt_wc-textarea-0_0_li" class="ed_button button button-small" aria-label="Element listy" value="li"><input type="button" id="qt_wc-textarea-0_0_wpdiscuz_code" class="ed_button button button-small" title="Code" value="code"><input type="button" id="qt_wc-textarea-0_0_wpdiscuz_spoiler" class="ed_button button button-small" title="Spoiler" value="spoiler"></div><textarea id="wc-textarea-0_0" placeholder="Dołącz do dyskusji..." required="" name="wc_comment" class="wc_comment wpd-field"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;"> 
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                <div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+                                                <input required="required" class="wc_name wpd-field" type="text" name="wc_name" placeholder="Imię*" maxlength="50" pattern=".{3,50}" title="">
+                            </div>
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                    <div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+                                                <input required="required" class="wc_email wpd-field" type="email" name="wc_email" placeholder="E-mail*">
+                            </div>
+                            <div class="wpdiscuz-item wpd-has-icon">
+                                            <div class="wpd-field-icon"><i class="fas fa-link"></i></div>
+                                            <input class="wc_website wpd-field" type="text" name="wc_website" placeholder="Witryna internetowa">
+                                    </div>
+                        </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-captcha wpdiscuz-item">
+            <div class="wc-captcha-input">
+                <input type="text" maxlength="5" autocomplete="off" required="required" name="wc_captcha" class="wpd-field wc_field_captcha" placeholder="Code" title="Insert the CAPTCHA code">
+            </div>
+            <div class="wc-label wc-captcha-label">
+                                <a class="wpdiscuz-nofollow" href="#" rel="nofollow"><img alt="wpdiscuz_captcha" class="wc_captcha_img" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/captcha_002.png" width="80" height="26"></a><a class="wpdiscuz-nofollow wc_captcha_refresh_img" href="#" rel="nofollow"><img alt="refresh" class="" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/captcha-loading.png" width="16" height="16"></a>
+                <input type="hidden" id="c5bff1ebda04ef" class="wpdiscuz-cnonce" name="cnonce" value="c5bff1ebda04ef">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+                <div class="wc-field-submit">
+                                            
+                                            <label class="wpd_label" title="Powiadom o nowych odpowiedziach na ten komentarz">
+                            <input id="wc_notification_new_comment-0_0" class="wc_notification_new_comment-0_0 wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type">
+                            <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                        </label>
+                                                                <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Opublikuj komentarz">
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="0_0" name="wpdiscuz_unique_id">
+                <input type="hidden" name="egXuLUAWnZzHE" value="q4xUcpufre0E7"><input type="hidden" name="LlpmwhferK" value="b4c2.sBjz*"></form>
+                    <div class="wpdiscuz-form-bottom-bar">
+                    <div class="wpdiscuz-fbb-left">
+                                                                        <div class="wpdiscuz-stat wpd-stat-threads wpd-tooltip-left">
+                        <i class="fas fa-align-left fa-rotate-180" data-fa-transform="rotate-180"></i><span class="wpd-stat-threads-count">9</span>
+                        <wpdtip>Comment threads</wpdtip>
+                    </div>
+                                                                                        <div class="wpdiscuz-stat wpd-stat-replies wpd-tooltip-left">
+                        <i class="far fa-comments"></i><span class="wpd-stat-replies-count">9</span>
+                        <wpdtip>Thread replies</wpdtip>
+                    </div>
+                                                                                        <div class="wpdiscuz-stat wpd-stat-subscribers wpd-tooltip-left">
+                        <i class="fas fa-rss"></i><span>0</span>
+                        <wpdtip>Followers</wpdtip>
+                    </div>&nbsp;
+                                                                    
+                    <div class="wpdiscuz-stat wpd-stat-reacted wpd-tooltip">
+                        <i class="fas fa-bolt"></i>
+                        <wpdtip>Most reacted comment</wpdtip>
+                    </div>
+                                                                    <div class="wpdiscuz-stat wpd-stat-hot wpd-tooltip">
+                        <i class="fab fa-hotjar"></i>
+                        <wpdtip>Hottest comment thread</wpdtip>
+                    </div>
+                            </div>
+                                        <div class="wpdiscuz-fbb-right">
+                                                        <div class="wpdiscuz-stat wpd-stat-users wpd-tooltip">
+                        <i class="fas fa-user-circle"></i> <span class="wpd-stat-authors-count">10</span>
+                        <wpdtip>Comment authors</wpdtip>
+                    </div>
+                                                                                                            <div class="wpdiscuz-users wpd-tooltip-right">
+                        <img alt="Gato" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/701adc2c859208bd0f61d6cdcb8d8597.jpg" srcset="https://secure.gravatar.com/avatar/701adc2c859208bd0f61d6cdcb8d8597?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" title="Gato" width="64" height="64"><img alt="Bofus" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/a22a43d4efe083d177393dfdad16b31a.jpg" srcset="https://secure.gravatar.com/avatar/a22a43d4efe083d177393dfdad16b31a?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" title="Bofus" width="64" height="64"><img alt="none" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/3eda6fcd3204ef285fa52176c28c4d3e.jpg" srcset="https://secure.gravatar.com/avatar/3eda6fcd3204ef285fa52176c28c4d3e?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" title="none" width="64" height="64"><img alt="Xeruvim" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/9f913d54490aecd7f06441f31f55c4f5.jpg" srcset="https://secure.gravatar.com/avatar/9f913d54490aecd7f06441f31f55c4f5?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" title="Xeruvim" width="64" height="64"><img alt="admin" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/32a3b52ca57acf8e6c2ffad24dcb7df5-d2xl6j4-64x64.jpg" width="64" height="64">                        <wpdtip>Recent comment authors</wpdtip>
+                    </div>
+                            </div>
+                <div class="wpd-clear"></div>
+    </div>
+            </div>
+                <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+                    <div class="wc-form-wrapper wc-secondary-form-wrapper" id="wc-secondary-form-wrapper-wpdiscuzuniqueid" style="display: none;">
+            <div class="wpdiscuz-comment-message" style="display: block;"></div>
+                            <div class="wc-secondary-forms-social-content"></div><div class="clearfix"></div>
+                                        <form class="wc_comm_form wc-secondary-form-wrapper" method="post" enctype="multipart/form-data">
+                    <div class="wc-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap wpdiscuz-quicktags-enabled">
+
+                                                                                                        <div class="wc-field-avatararea">
+                                        <img alt="avatar" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/a_002.jpg" srcset="https://secure.gravatar.com/avatar/?s=96&amp;d=mm&amp;r=r 2x" class="avatar avatar-48 photo avatar-default" width="48" height="48">                                    </div>
+                                
+                                <textarea id="wc-textarea-wpdiscuzuniqueid" placeholder="Dołącz do dyskusji..." required="" name="wc_comment" class="wc_comment wpd-field"></textarea>
+                                                                                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="wc-form-footer" style="display: none;"> 
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                <div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+                                                <input required="required" class="wc_name wpd-field" type="text" name="wc_name" placeholder="Imię*" maxlength="50" pattern=".{3,50}" title="">
+                            </div>
+                        <div class="wpdiscuz-item wpd-has-icon">
+                                    <div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+                                                <input required="required" class="wc_email wpd-field" type="email" name="wc_email" placeholder="E-mail*">
+                            </div>
+                            <div class="wpdiscuz-item wpd-has-icon">
+                                            <div class="wpd-field-icon"><i class="fas fa-link"></i></div>
+                                            <input class="wc_website wpd-field" type="text" name="wc_website" placeholder="Witryna internetowa">
+                                    </div>
+                        </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-captcha wpdiscuz-item">
+            <div class="wc-captcha-input">
+                <input type="text" maxlength="5" autocomplete="off" required="required" name="wc_captcha" class="wpd-field wc_field_captcha" placeholder="Code" title="Insert the CAPTCHA code">
+            </div>
+            <div class="wc-label wc-captcha-label">
+                                <a class="wpdiscuz-nofollow" href="#" rel="nofollow"><img alt="wpdiscuz_captcha" class="wc_captcha_img" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/captcha.png" width="80" height="26"></a><a class="wpdiscuz-nofollow wc_captcha_refresh_img" href="#" rel="nofollow"><img alt="refresh" class="" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/captcha-loading.png" width="16" height="16"></a>
+                <input type="hidden" id="c5bff1ebda1358" class="wpdiscuz-cnonce" name="cnonce" value="c5bff1ebda1358">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+                <div class="wc-field-submit">
+                                            
+                                            <label class="wpd_label" title="Powiadom o nowych odpowiedziach na ten komentarz">
+                            <input id="wc_notification_new_comment-wpdiscuzuniqueid" class="wc_notification_new_comment-wpdiscuzuniqueid wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type">
+                            <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                        </label>
+                                                                <input class="wc_comm_submit wc_not_clicked button alt" type="submit" name="submit" value="Opublikuj komentarz">
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                    <div class="clearfix"></div>
+                    <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid" name="wpdiscuz_unique_id">
+                <input type="hidden" name="egXuLUAWnZzHE" value="q4xUcpufre0E7"><input type="hidden" name="LlpmwhferK" value="b4c2.sBjz*"></form>
+                        </div>
+                </div>
+        <p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>                                   
+
+                                    <div class="wpdiscuz-front-actions">
+                                                    <div class="wpdiscuz-sbs-wrap">
+                                <span><i class="far fa-envelope" aria-hidden="true"></i>&nbsp; Subscribe &nbsp;<i class="fas fa-caret-down" aria-hidden="true"></i></span>
+                            </div>
+                                                                        <div class="clearfix"></div>
+                    </div>
+                                                    <div class="wpdiscuz-subscribe-bar wpdiscuz-hidden">
+                                                    <form action="https://adrian.siemieniak.net/portal/wp-admin/admin-ajax.php?action=addSubscription" method="post" id="wpdiscuz-subscribe-form">
+                                <div class="wpdiscuz-subscribe-form-intro">Powiadom o </div>
+                                <div class="wpdiscuz-subscribe-form-option" style="width:40%;">
+                                    <select class="wpdiscuz_select" name="wpdiscuzSubscriptionType">
+                                                                                    <option value="post" selected="selected">nowych dalszych komentarzach</option>
+                                                                                                                            <option value="all_comment">nowych odpowiedziach na moje komentarze</option>
+                                                                            </select>
+                                </div>
+                                                                    <div class="wpdiscuz-item wpdiscuz-subscribe-form-email">
+                                        <input class="email" type="email" name="wpdiscuzSubscriptionEmail" required="required" placeholder="E-mail">
+                                    </div>
+                                                                <div class="wpdiscuz-subscribe-form-button">
+                                    <input id="wpdiscuz_subscription_button" type="submit" value="›" name="wpdiscuz_subscription_button">
+                                </div> 
+                                                                <input type="hidden" id="wpdiscuz_subscribe_form_nonce" name="wpdiscuz_subscribe_form_nonce" value="20e1026bf8"><input type="hidden" name="_wp_http_referer" value="/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/">                                <input type="hidden" value="837" name="wpdiscuzSubscriptionPostId">
+                            <input type="hidden" name="egXuLUAWnZzHE" value="q4xUcpufre0E7"><input type="hidden" name="LlpmwhferK" value="b4c2.sBjz*"></form>
+                                                <div class="wpdiscuz_clear"></div>
+                                            </div>
+                    
+                                <div id="wcThreadWrapper" class="wc-thread-wrapper">
+                    <div id="wc-comm-4403_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="Arek K." src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/fd88caf3bf2ac3e33b6f4b5f54054df2.png" srcset="https://secure.gravatar.com/avatar/fd88caf3bf2ac3e33b6f4b5f54054df2?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4403" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">Arek K.</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4403"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Your endstop connection is wrong. You got Y axis endstop on X_Max end stop <img draggable="false" class="emoji" alt="🙂" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/1f642.svg"></p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">-1</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>8 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4403_0" style="clear:both"></div><div id="wc-comm-4404_4403" class="wc-comment wc-reply wc-blog-user wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/sauron/" target="_blank"><img alt="Sauron" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/sauron-hula-hooping-305x550-2-64x64.png" width="64" height="64"></a><div class="wc-blog-user wc-blog-post_author wc-comment-label"><span>Autor</span></div></div><div id="comment-4404" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="http://adrian.siemieniak.net/" rel="nofollow" target="_blank">Sauron</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4404"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>It’s not wrong, please read what I’ve changed to enable interrupts and SD card. I’ve remapped those pins in pins_RAMPS.h <img draggable="false" class="emoji" alt="🙂" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/1f642.svg"></p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">2</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>8 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4404_4403" style="clear:both"></div><div id="wc-comm-4419_4404" class="wc-comment wc-reply wc-blog-guest wc_comment_level-3"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="Bofus" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/a22a43d4efe083d177393dfdad16b31a.jpg" srcset="https://secure.gravatar.com/avatar/a22a43d4efe083d177393dfdad16b31a?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4419" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">Bofus</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4419"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I
+ guess, what he says is that in the picture „SPI Connection” You connect
+ the Y and X endstops to the Y MIN and Y MAX, but you say it has to go 
+to X MIN and X MAX, as shown in the picture above.<br>
+ Im following your tutorial, excellent!</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">1</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>5 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4419_4404" style="clear:both"></div><div id="wc-comm-4420_4419" class="wc-comment wc-reply wc-blog-user wc-blog-post_author wc_comment_level-4"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/sauron/" target="_blank"><img alt="Sauron" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/sauron-hula-hooping-305x550-2-64x64.png" width="64" height="64"></a><div class="wc-blog-user wc-blog-post_author wc-comment-label"><span>Autor</span></div></div><div id="comment-4420" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="http://adrian.siemieniak.net/" rel="nofollow" target="_blank">Sauron</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4420"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>You are right, description (with X MIN/X MAX) is wrong – corrected!</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>5 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4420_4419" style="clear:both"></div></div></div></div></div><div id="wc-comm-4405_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="Bossman74" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/fcdea6bdb48600e401479dce769a3ef3.png" srcset="https://secure.gravatar.com/avatar/fcdea6bdb48600e401479dce769a3ef3?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4405" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">Bossman74</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4405"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Are the connections the same for a MKS Gen L 1.0?<br>
+Also could I use E2 to drive my Z2 stepper and could both Z steppers 
+have sensorless homing to make sure the gantry is parallel to the bed?</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>7 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4405_0" style="clear:both"></div></div><div id="wc-comm-4406_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="Bossman74" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/fcdea6bdb48600e401479dce769a3ef3.png" srcset="https://secure.gravatar.com/avatar/fcdea6bdb48600e401479dce769a3ef3?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4406" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">Bossman74</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4406"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I meant use the E1 to drive my Z2 stepper.</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>7 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4406_0" style="clear:both"></div><div id="wc-comm-4407_4406" class="wc-comment wc-reply wc-blog-user wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/sauron/" target="_blank"><img alt="Sauron" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/sauron-hula-hooping-305x550-2-64x64.png" width="64" height="64"></a><div class="wc-blog-user wc-blog-post_author wc-comment-label"><span>Autor</span></div></div><div id="comment-4407" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="http://adrian.siemieniak.net/" rel="nofollow" target="_blank">Sauron</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4407"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Connection
+ should be close if not identical – you can compare pin layout for both 
+boards on schematic. If board can handle second extruder, then yes – you
+ can change it to second Z axis motor (motor for axis and extruder are 
+the same type – and controller don’t care if it moves filament or axis).<br>
+To do something similar to Prusa Mk3 Z axis levelling (triggering Z max 
+on both steppers individually) should be possible – my construction is 
+not sturdy enough, so I haven’t tested it… yet <img draggable="false" class="emoji" alt="😉" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/1f609.svg"></p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">1</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>7 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4407_4406" style="clear:both"></div></div></div><div id="wc-comm-4408_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="Bossman74" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/fcdea6bdb48600e401479dce769a3ef3.png" srcset="https://secure.gravatar.com/avatar/fcdea6bdb48600e401479dce769a3ef3?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4408" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">Bossman74</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4408"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I’ve
+ managed to make it work, thanks for your help ! I don’t know why, but 
+when i had the move the SCO wire from the D50 pin to D64. When connected
+ to D50, my TFT32 display couldn’t communicate with the board. So I 
+moved it to D64 and change the pin location in „pins_RAMPS.h” is that ok
+ ? #if ENABLED(TMC_USE_SW_SPI) #ifndef TMC_SW_MOSI #define TMC_SW_MOSI 
+51 #endif #ifndef TMC_SW_MISO #define TMC_SW_MISO 64 #endif #ifndef 
+TMC_SW_SCK #define TMC_SW_SCK 52 #endif #endif Also I have a filament 
+sensor with 3 pins (5v+,GND,SIG) on which pin shouldI connect it? I’ve 
+read that I<span id="wpdiscuz-readmore-4408_0"><span class="wpdiscuz-hellip">…&nbsp;</span><span class="wpdiscuz-readmore" title="Czytaj więcej »">Czytaj więcej »</span></span></p></div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>7 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4408_0" style="clear:both"></div><div id="wc-comm-4409_4408" class="wc-comment wc-reply wc-blog-user wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/sauron/" target="_blank"><img alt="Sauron" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/sauron-hula-hooping-305x550-2-64x64.png" width="64" height="64"></a><div class="wc-blog-user wc-blog-post_author wc-comment-label"><span>Autor</span></div></div><div id="comment-4409" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="http://adrian.siemieniak.net/" rel="nofollow" target="_blank">Sauron</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4409"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Well,
+ D50 is connected to EXP1 socket – so potentially LCD can use it (in my 
+case (MKS_MINI_12864) it’s assigned to beeper and I don’t have it).<br>
+So you can reassign it to any other, free digital pin.<br>
+TFT32 has it’s own driver (that serializes connection with ATmega) – so I don’t know how it will work this way.<br>
+By default FIL_RUNOUT_PIN in defined in pins_RAMPS.h on pin D4 – this pin is available in servo socket.</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>7 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4409_4408" style="clear:both"></div></div></div><div id="wc-comm-4410_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="pc7x" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/ba6239bb224a22894739afeccb42c943.jpg" srcset="https://secure.gravatar.com/avatar/ba6239bb224a22894739afeccb42c943?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4410" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="https://pc7x.net/" rel="nofollow" target="_blank">pc7x</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4410"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I get:</p>
+<p>Driver registers:<br>
+	X = 0xE0:0C:00:00<br>
+	Y = 0xE0:0C:00:00<br>
+	Z = 0xE0:0C:00:00<br>
+	E0 = 0xC0:0C:00:00<br>
+	E1 = 0xE0:0C:00:00</p>
+<p>Some have the same address, is this correct?</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>7 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4410_0" style="clear:both"></div><div id="wc-comm-4413_4410" class="wc-comment wc-reply wc-blog-user wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/sauron/" target="_blank"><img alt="Sauron" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/sauron-hula-hooping-305x550-2-64x64.png" width="64" height="64"></a><div class="wc-blog-user wc-blog-post_author wc-comment-label"><span>Autor</span></div></div><div id="comment-4413" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="http://adrian.siemieniak.net/" rel="nofollow" target="_blank">Sauron</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4413"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Yes,
+ it’s ok (if this is truly correct, this is completely other case) – I 
+also have the same registers. Even in examples in marlinfw you can see 
+the same addresses: <a href="http://marlinfw.org/docs/gcode/M122.html" rel="nofollow">http://marlinfw.org/docs/gcode/M122.html</a></p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>6 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4413_4410" style="clear:both"></div></div></div><div id="wc-comm-4411_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="The JT" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/53b5b7f0fc7f6871ea1b09aaaa788390.jpg" srcset="https://secure.gravatar.com/avatar/53b5b7f0fc7f6871ea1b09aaaa788390?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4411" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">The JT</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4411"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I
+ had to resolder the connections on the board. The problem is that if I 
+plug the driver in, it starts heating up immedialty without anything 
+else connected on the board. What did I do wrong?</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>6 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4411_0" style="clear:both"></div><div id="wc-comm-4412_4411" class="wc-comment wc-reply wc-blog-user wc-blog-administrator wc_comment_level-2"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/admin/" target="_blank"><img alt="admin" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/32a3b52ca57acf8e6c2ffad24dcb7df5-d2xl6j4-64x64.jpg" width="64" height="64"></a><div class="wc-blog-user wc-blog-administrator wc-comment-label"><span>Admin</span></div></div><div id="comment-4412" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="https://adrian.siemieniak.net/portal/author/admin/" rel="nofollow" target="_blank">admin</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4412"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>You
+ would have to show some schematics, pictures – it’s hard to tell with 
+information you provided so far. If it’s heating, it means it transfers 
+current (close circuit), did you insert it correctly?</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>6 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4412_4411" style="clear:both"></div></div></div><div id="wc-comm-4414_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="Xeruvim" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/9f913d54490aecd7f06441f31f55c4f5.jpg" srcset="https://secure.gravatar.com/avatar/9f913d54490aecd7f06441f31f55c4f5?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4414" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">Xeruvim</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4414"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>What can i do if i don’t can solder those 2 tiny spots? ( i manage to remove the resistor but i fail to make the other two)</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>6 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4414_0" style="clear:both"></div><div id="wc-comm-4416_4414" class="wc-comment wc-reply wc-blog-user wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/sauron/" target="_blank"><img alt="Sauron" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/sauron-hula-hooping-305x550-2-64x64.png" width="64" height="64"></a><div class="wc-blog-user wc-blog-post_author wc-comment-label"><span>Autor</span></div></div><div id="comment-4416" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="http://adrian.siemieniak.net/" rel="nofollow" target="_blank">Sauron</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4416"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I
+ assume you are talking about TMC2130 board and changing it to SPI aware
+ version (1.3). There is no other way (except buying new) then to 
+resolder those tiny pads. Just use magnifying glasses and good, pointy 
+soldering iron. To clean pads from solder, use some soldering copper 
+wick.</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>6 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4416_4414" style="clear:both"></div></div></div><div id="wc-comm-4415_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="none" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/3eda6fcd3204ef285fa52176c28c4d3e.jpg" srcset="https://secure.gravatar.com/avatar/3eda6fcd3204ef285fa52176c28c4d3e?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4415" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">none</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4415"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>I may be late to the party but i have one Question. You said you got SD Card to work, how is that?<br>
+I Only (visible) Plan on using a MKS TFT32, do you have plugged in another Display/SD Card Reader Combo?<br>
+Do you know of anything that would work for me?</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>6 miesięcy temu</div><div class="wc-toggle"><i class="fas fa-chevron-up" title="Ukryj odpowiedzi"></i></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4415_0" style="clear:both"></div><div id="wc-comm-4417_4415" class="wc-comment wc-reply wc-blog-user wc-blog-post_author wc_comment_level-2"><div class="wc-comment-left "><div class="wpd-xborder"></div><a href="https://adrian.siemieniak.net/portal/author/sauron/" target="_blank"><img alt="Sauron" class="avatar avatar-64 photo avatar-default" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/sauron-hula-hooping-305x550-2-64x64.png" width="64" height="64"></a><div class="wc-blog-user wc-blog-post_author wc-comment-label"><span>Autor</span></div></div><div id="comment-4417" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author "><a href="http://adrian.siemieniak.net/" rel="nofollow" target="_blank">Sauron</a></div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4417"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Yes
+ I have working SD card reader, but like I wrote it comment above, TFT32
+ is completely different beast. I haven’t used it, but as far I read 
+specs, it uses own protocol to communicate with printer board and it’s 
+computer by itself (has own firmware etc).<br>
+I used so far two displays – RepRapDiscount Smart Controller and currently MKS MINI 12864 – on both, sd card was working.</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>6 miesięcy temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4417_4415" style="clear:both"></div></div></div><div id="wc-comm-4421_0" class="wc-comment wc-blog-guest wc_comment_level-1"><div class="wc-comment-left "><div class="wpd-xborder"></div><img alt="Gato" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/701adc2c859208bd0f61d6cdcb8d8597.jpg" srcset="https://secure.gravatar.com/avatar/701adc2c859208bd0f61d6cdcb8d8597?s=128&amp;d=mm&amp;r=r 2x" class="avatar avatar-64 photo" width="64" height="64"><div class="wc-blog-guest wc-comment-label"><span>Gość</span></div></div><div id="comment-4421" class="wc-comment-right "><div class="wc-comment-header"><div class="wc-comment-author ">Gato</div><div class="wc-comment-link"><span class="wc-comment-img-link-wrap"><i class="fas fa-link wc-comment-img-link wpf-cta" aria-hidden="true"></i><span><input type="text" class="wc-comment-link-input" value="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/#comment-4421"></span></span></div><div class="wpdiscuz_clear"></div></div><div class="wc-comment-text"><p>Thank
+ you soooo much for this tuto, it really helped me. finally have my 
+TMC’s running, but i still have a problem. Z mechanic end/stop works 
+fine, but X/Y don’t, and i don’t really care to continue using mechanic 
+ones, what should i change on Marlin to continue using mechanical end 
+stops on X/Y?</p>
+</div><div class="wc-comment-footer"><div class="wc-footer-left"><span class="wc-vote-link wc-up  wc_vote wc_not_clicked"><i class="fas fa-plus wc-vote-img-up"></i><span>Lubię to</span></span><span class="wc-vote-result">0</span><span class="wc-vote-link wc-down  wc_vote wc_not_clicked"><i class="fas fa-minus wc-vote-img-down"></i><span>Nie lubię</span></span>&nbsp;<span class="wc-reply-button wc-cta-button" title="Odpowiedz"><i class="far fa-comments" aria-hidden="true"></i> Odpowiedz</span></div><div class="wc-footer-right"><div class="wc-comment-date"><i class="far fa-clock" aria-hidden="true"></i>10 dni temu</div><div class="wc-toggle"></div></div><div class="wpdiscuz_clear"></div></div></div><div class="wpdiscuz-comment-message"></div><div id="wpdiscuz_form_anchor-4421_0" style="clear:both"></div></div>                
+                    <div class="wpdiscuz-comment-pagination">
+                                            </div>
+                </div>
+                <div class="wpdiscuz_clear"></div>
+                                                                                </div>
+        </div>
+        <div id="wpdiscuz-loading-bar" class="wpdiscuz-loading-bar wpdiscuz-loading-bar-unauth"></div>
+        
+                            
+                                            </main> <!-- /.site-main -->
+                </div>  <!-- /.content-area -->
+            </div> <!-- /col -->
+
+            <!-- Blogsidebar -->
+            
+	<div class="col-md-4">
+	    <div class="primary-sidebar widget-area" role="complementary">
+	        		<div id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Najnowsze wpisy</h2>		<ul>
+											<li>
+					<a href="https://adrian.siemieniak.net/portal/how-to-choose-different-systems-based-on-pressed-key-in-grub2/">How to choose different systems, based on pressed key in GRUB2</a>
+									</li>
+											<li>
+					<a href="https://adrian.siemieniak.net/portal/sony-rx100-mark-vi-and-gps-location-from-smartphone/">Sony RX100 mark VI and GPS location from smartphone</a>
+									</li>
+											<li>
+					<a href="https://adrian.siemieniak.net/portal/15w-blue-450nm-led-laser-module-and-grbl-investigation/">15W blue (450nm) LED laser module and GRBL investigation</a>
+									</li>
+											<li>
+					<a href="https://adrian.siemieniak.net/portal/flashing-new-bootloader-to-woodpecker-cnc/">Flashing new bootloader to Woodpecker CNC</a>
+									</li>
+											<li>
+					<a href="https://adrian.siemieniak.net/portal/diy-dji-mavic-air-car-usb-charger/">DIY DJI Mavic Air car/usb charger</a>
+									</li>
+					</ul>
+		</div><div id="recent-comments-3" class="widget widget_recent_comments"><h2 class="widget-title">Recent comments</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Gato</span> o <a href="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/comment-page-1/#comment-4421">MKS Gen 1.4 board with TMC2130 and Marlin firmware – howto</a></li><li class="recentcomments"><span class="comment-author-link">Sauron</span> o <a href="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/comment-page-1/#comment-4420">MKS Gen 1.4 board with TMC2130 and Marlin firmware – howto</a></li><li class="recentcomments"><span class="comment-author-link">Bofus</span> o <a href="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/comment-page-1/#comment-4419">MKS Gen 1.4 board with TMC2130 and Marlin firmware – howto</a></li><li class="recentcomments"><span class="comment-author-link">matet</span> o <a href="https://adrian.siemieniak.net/portal/tani-sterownik-pieca-do-ceramiki-pc410/comment-page-1/#comment-4418">Tani sterownik pieca do ceramiki PC410</a></li><li class="recentcomments"><span class="comment-author-link">Sauron</span> o <a href="https://adrian.siemieniak.net/portal/mks-gen-1-4-board-with-tmc2130-and-marlin-firmware-howto/comment-page-1/#comment-4417">MKS Gen 1.4 board with TMC2130 and Marlin firmware – howto</a></li></ul></div><div id="meta-9" class="widget widget_meta"><h2 class="widget-title">Meta</h2>			<ul>
+			<li><a href="https://adrian.siemieniak.net/portal/wp-login.php?action=register">Zarejestruj się</a></li>			<li><a href="https://adrian.siemieniak.net/portal/wp-login.php">Zaloguj się</a></li>
+			<li><a href="https://adrian.siemieniak.net/portal/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z wpisami</a></li>
+			<li><a href="https://adrian.siemieniak.net/portal/comments/feed/">Kanał <abbr title="Really Simple Syndication">RSS</abbr> z komentarzami</a></li>
+			<li><a href="https://pl.wordpress.org/" title="Ta strona jest oparta na WordPressie — nowoczesnej, semantycznej, osobistej platformie publikacyjnej.">WordPress.org</a></li>			</ul>
+			</div><div id="archives-2" class="widget widget_archive"><h2 class="widget-title">Archiwa</h2>		<label class="screen-reader-text" for="archives-dropdown-2">Archiwa</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			
+			<option value="" selected="selected">Wybierz miesiąc</option>
+				<option value="https://adrian.siemieniak.net/portal/2018/11/"> Listopad 2018 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2018/09/"> Wrzesień 2018 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2018/05/"> Maj 2018 &nbsp;(2)</option>
+	<option value="https://adrian.siemieniak.net/portal/2018/04/"> Kwiecień 2018 &nbsp;(3)</option>
+	<option value="https://adrian.siemieniak.net/portal/2018/03/"> Marzec 2018 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2018/02/"> Luty 2018 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2018/01/"> Styczeń 2018 &nbsp;(2)</option>
+	<option value="https://adrian.siemieniak.net/portal/2017/11/"> Listopad 2017 &nbsp;(2)</option>
+	<option value="https://adrian.siemieniak.net/portal/2017/10/"> Październik 2017 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2017/09/"> Wrzesień 2017 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2017/08/"> Sierpień 2017 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2017/01/"> Styczeń 2017 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2016/08/"> Sierpień 2016 &nbsp;(2)</option>
+	<option value="https://adrian.siemieniak.net/portal/2016/07/"> Lipiec 2016 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2016/05/"> Maj 2016 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2015/12/"> Grudzień 2015 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2015/10/"> Październik 2015 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2015/02/"> Luty 2015 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2014/11/"> Listopad 2014 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2013/03/"> Marzec 2013 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2010/03/"> Marzec 2010 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2009/11/"> Listopad 2009 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2009/04/"> Kwiecień 2009 &nbsp;(1)</option>
+	<option value="https://adrian.siemieniak.net/portal/2008/11/"> Listopad 2008 &nbsp;(2)</option>
+	<option value="https://adrian.siemieniak.net/portal/2008/10/"> Październik 2008 &nbsp;(2)</option>
+
+		</select>
+		</div><div id="search-4" class="widget widget_search"><h2 class="widget-title">Search</h2><form role="search" method="get" class="search-form" action="https://adrian.siemieniak.net/portal/">
+				<label>
+					<span class="screen-reader-text">Szukaj:</span>
+					<input type="search" class="search-field" placeholder="Szukaj …" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Szukaj">
+			</form></div><div id="tag_cloud-6" class="widget widget_tag_cloud"><h2 class="widget-title">Tagi</h2><div class="tagcloud"><a href="https://adrian.siemieniak.net/portal/tag/3d-printer/" class="tag-cloud-link tag-link-121 tag-link-position-1" style="font-size: 14.3pt;" aria-label="3d printer (2 elementów)">3d printer<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/amarok/" class="tag-cloud-link tag-link-19 tag-link-position-2" style="font-size: 8pt;" aria-label="amarok (1 element)">amarok<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/bluetooth/" class="tag-cloud-link tag-link-115 tag-link-position-3" style="font-size: 14.3pt;" aria-label="bluetooth (2 elementów)">bluetooth<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/bretonstone/" class="tag-cloud-link tag-link-24 tag-link-position-4" style="font-size: 8pt;" aria-label="Bretonstone (1 element)">Bretonstone<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/castorama/" class="tag-cloud-link tag-link-36 tag-link-position-5" style="font-size: 8pt;" aria-label="castorama (1 element)">castorama<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/cd-cover/" class="tag-cloud-link tag-link-26 tag-link-position-6" style="font-size: 8pt;" aria-label="CD Cover (1 element)">CD Cover<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/cennik/" class="tag-cloud-link tag-link-35 tag-link-position-7" style="font-size: 8pt;" aria-label="cennik (1 element)">cennik<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/ceramika/" class="tag-cloud-link tag-link-47 tag-link-position-8" style="font-size: 14.3pt;" aria-label="ceramika (2 elementów)">ceramika<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/cf/" class="tag-cloud-link tag-link-30 tag-link-position-9" style="font-size: 8pt;" aria-label="CF (1 element)">CF<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/cnc/" class="tag-cloud-link tag-link-159 tag-link-position-10" style="font-size: 14.3pt;" aria-label="CNC (2 elementów)">CNC<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/covers/" class="tag-cloud-link tag-link-21 tag-link-position-11" style="font-size: 8pt;" aria-label="covers (1 element)">covers<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/debian/" class="tag-cloud-link tag-link-74 tag-link-position-12" style="font-size: 22pt;" aria-label="debian (4 elementów)">debian<span class="tag-link-count"> (4)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/deska/" class="tag-cloud-link tag-link-37 tag-link-position-13" style="font-size: 8pt;" aria-label="deska (1 element)">deska<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/deski/" class="tag-cloud-link tag-link-38 tag-link-position-14" style="font-size: 8pt;" aria-label="deski (1 element)">deski<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/dpkg/" class="tag-cloud-link tag-link-77 tag-link-position-15" style="font-size: 14.3pt;" aria-label="dpkg (2 elementów)">dpkg<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/drewno/" class="tag-cloud-link tag-link-34 tag-link-position-16" style="font-size: 8pt;" aria-label="drewno (1 element)">drewno<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/dzwonek/" class="tag-cloud-link tag-link-17 tag-link-position-17" style="font-size: 8pt;" aria-label="dzwonek (1 element)">dzwonek<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/dzwonki/" class="tag-cloud-link tag-link-18 tag-link-position-18" style="font-size: 8pt;" aria-label="dzwonki (1 element)">dzwonki<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/gimp/" class="tag-cloud-link tag-link-71 tag-link-position-19" style="font-size: 14.3pt;" aria-label="gimp (2 elementów)">gimp<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/gra/" class="tag-cloud-link tag-link-13 tag-link-position-20" style="font-size: 8pt;" aria-label="gra (1 element)">gra<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/grbl/" class="tag-cloud-link tag-link-161 tag-link-position-21" style="font-size: 14.3pt;" aria-label="GRBL (2 elementów)">GRBL<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/infitary/" class="tag-cloud-link tag-link-118 tag-link-position-22" style="font-size: 14.3pt;" aria-label="Infitary (2 elementów)">Infitary<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/iriver/" class="tag-cloud-link tag-link-28 tag-link-position-23" style="font-size: 8pt;" aria-label="IRiver (1 element)">IRiver<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/karcianka/" class="tag-cloud-link tag-link-12 tag-link-position-24" style="font-size: 8pt;" aria-label="karcianka (1 element)">karcianka<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/karty/" class="tag-cloud-link tag-link-14 tag-link-position-25" style="font-size: 8pt;" aria-label="karty (1 element)">karty<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/laser-engraving/" class="tag-cloud-link tag-link-69 tag-link-position-26" style="font-size: 14.3pt;" aria-label="laser engraving (2 elementów)">laser engraving<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/linux/" class="tag-cloud-link tag-link-5 tag-link-position-27" style="font-size: 14.3pt;" aria-label="Linux (2 elementów)">Linux<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/marlin/" class="tag-cloud-link tag-link-149 tag-link-position-28" style="font-size: 14.3pt;" aria-label="Marlin (2 elementów)">Marlin<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/md-cover/" class="tag-cloud-link tag-link-27 tag-link-position-29" style="font-size: 8pt;" aria-label="MD Cover (1 element)">MD Cover<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/music/" class="tag-cloud-link tag-link-29 tag-link-position-30" style="font-size: 8pt;" aria-label="Music (1 element)">Music<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/okladka/" class="tag-cloud-link tag-link-25 tag-link-position-31" style="font-size: 8pt;" aria-label="Okładka (1 element)">Okładka<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/open-folk/" class="tag-cloud-link tag-link-23 tag-link-position-32" style="font-size: 8pt;" aria-label="Open Folk (1 element)">Open Folk<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/piec-do-ceramiki/" class="tag-cloud-link tag-link-78 tag-link-position-33" style="font-size: 14.3pt;" aria-label="piec do ceramiki (2 elementów)">piec do ceramiki<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/restauracje/" class="tag-cloud-link tag-link-8 tag-link-position-34" style="font-size: 8pt;" aria-label="restauracje (1 element)">restauracje<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/ringtone/" class="tag-cloud-link tag-link-16 tag-link-position-35" style="font-size: 8pt;" aria-label="ringtone (1 element)">ringtone<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/ringtones/" class="tag-cloud-link tag-link-11 tag-link-position-36" style="font-size: 8pt;" aria-label="ringtones (1 element)">ringtones<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/rockbox/" class="tag-cloud-link tag-link-20 tag-link-position-37" style="font-size: 14.3pt;" aria-label="rockbox (2 elementów)">rockbox<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/rpg/" class="tag-cloud-link tag-link-15 tag-link-position-38" style="font-size: 8pt;" aria-label="rpg (1 element)">rpg<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/script/" class="tag-cloud-link tag-link-22 tag-link-position-39" style="font-size: 8pt;" aria-label="script (1 element)">script<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/sosna/" class="tag-cloud-link tag-link-33 tag-link-position-40" style="font-size: 8pt;" aria-label="sosna (1 element)">sosna<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/volvo/" class="tag-cloud-link tag-link-114 tag-link-position-41" style="font-size: 14.3pt;" aria-label="volvo (2 elementów)">volvo<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/warszawa/" class="tag-cloud-link tag-link-9 tag-link-position-42" style="font-size: 8pt;" aria-label="Warszawa (1 element)">Warszawa<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/wypalanie-gliny/" class="tag-cloud-link tag-link-45 tag-link-position-43" style="font-size: 14.3pt;" aria-label="wypalanie gliny (2 elementów)">wypalanie gliny<span class="tag-link-count"> (2)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/swierk/" class="tag-cloud-link tag-link-32 tag-link-position-44" style="font-size: 8pt;" aria-label="świerk (1 element)">świerk<span class="tag-link-count"> (1)</span></a>
+<a href="https://adrian.siemieniak.net/portal/tag/zeberka/" class="tag-cloud-link tag-link-31 tag-link-position-45" style="font-size: 8pt;" aria-label="żeberka (1 element)">żeberka<span class="tag-link-count"> (1)</span></a></div>
+</div>	    </div>
+	</div>
+
+
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+  
+                    <p></p>
+                    
+                                            <div class="footer-social-icons">
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+            <div class="scroll-up" style="display: none;">
+            <a href="#"><i class="fa fa-angle-up"></i></a>
+        </div>
+        <!-- Scroll Up -->
+
+    <a id="wpdUserContentInfoAnchor" style="display:none;" rel="#wpdUserContentInfo" data-wpd-lity="">wpDiscuz</a><div id="wpdUserContentInfo" style="overflow:auto;background:#FDFDF6;padding:20px;width:600px;max-width:100%;border-radius:6px;" class="lity-hide"></div><link rel="stylesheet" id="wp-lightbox-bank.css-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wp-lightbox-bank.css" type="text/css" media="all">
+<link rel="stylesheet" id="dgwt-jg-style-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="dgwt-jg-photoswipe-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/photoswipe.css" type="text/css" media="all">
+<link rel="stylesheet" id="dgwt-jg-photoswipe-skin-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/default-skin.css" type="text/css" media="all">
+<link rel="stylesheet" id="dgwt-jg-swipebox-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/swipebox.css" type="text/css" media="all">
+<link rel="stylesheet" id="dgwt-tiles-jg-standard-css" href="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/style.css" type="text/css" media="all">
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery_008.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var quicktagsL10n = {"closeAllOpenTags":"Zamknij wszystkie otwarte tagi","closeTags":"zamknij tagi","enterURL":"Wprowad\u017a adres URL","enterImageURL":"Wprowad\u017a adres URL obrazka","enterImageDescription":"Wprowad\u017a opis obrazka","textdirection":"kierunek pisania","toggleTextdirection":"Prze\u0142\u0105cz kierunek pisania w edytorze","dfw":"Tryb pisania bez rozpraszania","strong":"Pogrubienie","strongClose":"Zamknij znacznik pogrubienia","em":"Kursywa","emClose":"Zamknij znacznik kursywy","link":"Wstaw odno\u015bnik","blockquote":"Blok z cytatem","blockquoteClose":"Zamknij znacznik cytatu","del":"Usuni\u0119ty tekst (przekre\u015blenie)","delClose":"Zamknij znacznik usuni\u0119tego tekstu","ins":"Wstawiony text","insClose":"Zamknij znacznik wstawionego tekstu","image":"Wstaw obrazek","ul":"Lista nieuporz\u0105dkowana","ulClose":"Zamknij list\u0119 nienumerowan\u0105","ol":"Lista numerowana","olClose":"Zamknij znacznik listy numerowanej","li":"Element listy","liClose":"Zamknij znacznik elementu listy","code":"Kod","codeClose":"Zamknij znacznik kodu","more":"Wstaw znacznik \u201eCzytaj dalej\u201d"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/quicktags.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wpdiscuz-quictags.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/bootstrap.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/scripts.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery_005.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/smoothscroll.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/comment-reply.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/mootools-core-yc.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/EnlighterJS.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wp-embed.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/wp-lightbox-bank.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var DGWT_JG = {"plugin_url":"https:\/\/adrian.siemieniak.net\/portal\/wp-content\/plugins\/justified-gallery\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery_006.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery_002.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/photoswipe-ui-default.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/photoswipe.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery.js"></script>
+<script type="text/javascript" src="MKS%20Gen%201.4%20board%20with%20TMC2130%20and%20Marlin%20firmware%20%E2%80%93%20howto%20%E2%80%93%20Sauron's%20TrashPage_bestanden/jquery_007.js"></script>
+<script type="text/javascript">/* <![CDATA[ */EnlighterJS_Config = {"selector":{"block":"pre.EnlighterJSRAW","inline":"code.EnlighterJSRAW"},"language":"generic","theme":"enlighter","indent":2,"hover":"hoverEnabled","showLinenumbers":true,"rawButton":true,"infoButton":true,"windowButton":true,"rawcodeDoubleclick":false,"grouping":true,"cryptex":{"enabled":false,"email":"mail@example.tld"}};!function(){var a=function(a){var b="Enlighter Error: ";console.error?console.error(b+a):console.log&&console.log(b+a)};return window.addEvent?"undefined"==typeof EnlighterJS?void a("Javascript Resources not loaded yet!"):"undefined"==typeof EnlighterJS_Config?void a("Configuration not loaded yet!"):void window.addEvent("domready",function(){EnlighterJS.Util.Init(EnlighterJS_Config.selector.block,EnlighterJS_Config.selector.inline,EnlighterJS_Config)}):void a("MooTools Framework not loaded yet!")}();;/* ]]> */</script><script type="text/javascript">(function($){$(document).ready(function(){var $gallery=$('.dgwt-jg-lightbox-photoswipe'),$item=$('.dgwt-jg-item');if($gallery.length>0&&$item.length>0){$gallery.photoswipe({loop:!1,shareButtons:[{id:'facebook',label:'Share on Facebook',url:'https://www.facebook.com/sharer/sharer.php?u={{image_url}}'},{id:'twitter',label:'Tweet',url:'https://twitter.com/intent/tweet?&url={{url}}'},{id:'pinterest',label:'Pin it',url:'http://www.pinterest.com/pin/create/button/?url={{url}}&media={{image_url}}'},{id:'download',label:'Download image',url:'{{raw_image_url}}',download:!0}]})}})}(jQuery))</script>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="pswp__bg"></div>
+	<div class="pswp__scroll-wrap">
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+
+		</div><div class="pswp__ui pswp__ui--hidden">
+			<div class="pswp__top-bar">
+				<div class="pswp__counter"></div>
+				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+				<button class="pswp__button pswp__button--share" title="Share"></button>
+				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+				<div class="pswp__preloader"><div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div>
+			</div>
+			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"> </button>
+			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"> </button>
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+		</div>
+	</div>
+</div><script type="text/javascript">(function($){$(document).ready(function(){var $gallery=$('.dgwt-jg-gallery'),$item=$('.dgwt-jg-item');if($gallery.length>0&&$item.length>0){$gallery.each(function(){$(this).justifiedGallery({lastRow:$(this).attr('data-last_row'),captions:!1,selector:'figure, div:not(.spinner)',margins:$(this).attr('data-margin'),border:$(this).attr('data-border'),rowHeight:$(this).attr('data-row_height'),maxRowHeight:$(this).attr('data-max_row_height'),thumbnailPath:function(currentPath,width,height,image){if(typeof $(image).data('jg-srcset')==='undefined'){return currentPath}var srcset=$(image).data('jg-srcset');if($(image).length>0&&srcset.length>0){var newPath,sizes=[],sizesTemp=[],urls=srcset.split(",");if(urls.length>0){for(i=0;i<urls.length;i++){var url,sizeW,item=urls[i].trim().split(" ");if(typeof item[0]!='undefined'&&typeof item[1]!='undefined'){var sizeW=item[1].replace('w','');sizesTemp[sizeW]={width:item[1].replace('w',''),url:item[0]}}}for(i=0;i<sizesTemp.length;i++){if(sizesTemp[i]){sizes.push(sizesTemp[i])}}}newPath=sizes[sizes.length-1].url;for(i=0;i<sizes.length;i++){if(sizes[i].width>=width){newPath=sizes[i].url
+                                                    break}}return newPath}else{return currentPath}}}).on('jg.complete',function(e){var $standardItems=$('.dgwt-jg-effect-standard .dgwt-jg-item');if($standardItems.length>0){$standardItems.each(function(){$(this).on('mouseenter mouseleave',function(e){var $this=$(this),width=$this.width(),height=$this.height();var x=(e.pageX-$this.offset().left-(width/2))*(width>height?(height/width):1),y=(e.pageY-$this.offset().top-(height/2))*(height>width?(width/height):1);var dir_num=Math.round((((Math.atan2(y,x)*(180/Math.PI))+180)/90)+3)%4,directions=['top','right','bottom','left'];if(e.type==='mouseenter'){$this.removeClass(function(index,css){return(css.match(/(^|\s)hover-out-\S+/g)||[]).join(' ')});$this.addClass('hover-in-'+directions[dir_num])}if(e.type==='mouseleave'){$this.removeClass(function(index,css){return(css.match(/(^|\s)hover-in-\S+/g)||[]).join(' ')});$this.addClass('hover-out-'+directions[dir_num])}})})}})})}})}(jQuery))</script><script type="text/javascript">/* Run FooBox FREE (v2.6.0) */
+(function( FOOBOX, $, undefined ) {
+  FOOBOX.o = {wordpress: { enabled: true }, excludes:'.fbx-link,.nofoobox,.nolightbox,a[href*="pinterest.com/pin/create/button/"]', affiliate : { enabled: false }, error: "Could not load the item"};
+  FOOBOX.init = function() {
+    $(".fbx-link").removeClass("fbx-link");
+    $(".foogallery-container.foogallery-lightbox-foobox, .foogallery-container.foogallery-lightbox-foobox-free, .foobox").foobox(FOOBOX.o);
+  };
+})( window.FOOBOX = window.FOOBOX || {}, FooBox.$ );
+
+FooBox.ready(function() {
+
+  jQuery("body").append("<span aria-hidden=\"true\" class=\"foobox_font_preload\" style=\"font-family:'foobox'; color:transparent; position:absolute; top:-9999px; left: -9999px;\">f</span>");
+  FOOBOX.init();
+  jQuery('body').on('post-load', function(){ FOOBOX.init(); });
+
+});
+</script>				<script type="text/javascript">
+					if (window.addEventListener){
+						window.addEventListener("DOMContentLoaded", function() {
+							var arr = document.querySelectorAll("script[type='text/foobox']");
+							for (var x = 0; x < arr.length; x++) {
+								var script = document.createElement("script");
+								script.type = "text/javascript";
+								script.innerHTML = arr[x].innerHTML;
+								arr[x].parentNode.replaceChild(script, arr[x]);
+							}
+						});
+					} else {
+						console.log("FooBox does not support the current browser.");
+					}
+				</script>
+				
+			<div id="cookie-notice" role="banner" class="cn-bottom wp-default" style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); visibility: visible; display: none;"><div class="cookie-notice-container"><span id="cn-notice-text">We
+ use cookies to ensure that we give you the best experience on our 
+website. If you continue to use this site we will assume that you are 
+happy with it.</span><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button wp-default button">Ok</a>
+				</div>
+				
+			</div>    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            //$( document ).ajaxStart(function() {
+            //});
+
+	        
+            for (var i = 0; i < document.forms.length; ++i) {
+                var form = document.forms[i];
+	            if ($(form).attr("method") != "get") { $(form).append('<input type="hidden" name="egXuLUAWnZzHE" value="q4xUcpufre0E7" />'); }
+if ($(form).attr("method") != "get") { $(form).append('<input type="hidden" name="LlpmwhferK" value="b4c2.sBjz*" />'); }
+            }
+
+            
+            $(document).on('submit', 'form', function () {
+		        if ($(this).attr("method") != "get") { $(this).append('<input type="hidden" name="egXuLUAWnZzHE" value="q4xUcpufre0E7" />'); }
+if ($(this).attr("method") != "get") { $(this).append('<input type="hidden" name="LlpmwhferK" value="b4c2.sBjz*" />'); }
+                return true;
+            });
+
+	        
+            jQuery.ajaxSetup({
+                beforeSend: function (e, data) {
+
+                    //console.log(Object.getOwnPropertyNames(data).sort());
+                    //console.log(data.type);
+
+                    if (data.type !== 'POST') return;
+
+                    if (typeof data.data === 'object' && data.data !== null) {
+	                    data.data.append("egXuLUAWnZzHE", "q4xUcpufre0E7");
+data.data.append("LlpmwhferK", "b4c2.sBjz*");
+                    }
+                    else {
+                        data.data =  data.data + '&egXuLUAWnZzHE=q4xUcpufre0E7&LlpmwhferK=b4c2.sBjz*';
+                    }
+                }
+            });
+
+        });
+    </script>
+	    
+<span aria-hidden="true" class="foobox_font_preload" style="font-family:'foobox'; color:transparent; position:absolute; top:-9999px; left: -9999px;">f</span></body></html>
