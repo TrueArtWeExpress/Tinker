@@ -1,0 +1,6 @@
+C2C outside rods : 84mm
+C2C smooth vs thread widest : 55mm
+C2C thread vs smooth nearest 29mm
+
+Smooth rod Dia : 10mm
+Thread rod Dia : 8mm
