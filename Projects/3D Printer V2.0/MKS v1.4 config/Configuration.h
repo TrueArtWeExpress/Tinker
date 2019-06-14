@@ -317,7 +317,7 @@
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_CHAMBER 0
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
@@ -918,7 +918,7 @@
 #endif
 
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS) || ENABLED(MAX_SOFTWARE_ENDSTOPS)
-  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+  #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
 /**
@@ -1130,8 +1130,8 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS 0
-#define MANUAL_Y_HOME_POS 210
+//#define MANUAL_X_HOME_POS 0
+//#define MANUAL_Y_HOME_POS 210
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
@@ -1276,7 +1276,7 @@
  *    P1  Raise the nozzle always to Z-park height.
  *    P2  Raise the nozzle by Z-park amount, limited to Z_MAX_POS.
  */
-#define NOZZLE_PARK_FEATURE
+//#define NOZZLE_PARK_FEATURE
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z }
@@ -1323,7 +1323,7 @@
  * Attention: EXPERIMENTAL. G-code arguments may change.
  *
  */
-//#define NOZZLE_CLEAN_FEATURE
+#define NOZZLE_CLEAN_FEATURE
 
 #if ENABLED(NOZZLE_CLEAN_FEATURE)
   // Default number of pattern repetitions
@@ -1428,7 +1428,7 @@
  * you must uncomment the following option or it won't work.
  *
  */
-//#define SDSUPPORT
+#define SDSUPPORT
 
 /**
  * SD CARD: SPI SPEED
