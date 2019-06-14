@@ -1,0 +1,4 @@
+Floppy drives (stepper motors, tray)
+old hard drives (stepper motors)
+Inkt jet printer (stepper motors, Smooth Rods)
+old CD or DVD burners (stepper motors)
