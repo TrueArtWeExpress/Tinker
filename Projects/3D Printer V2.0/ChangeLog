@@ -1,0 +1,9 @@
+-- 30/08/19 --
+* New X-Carriage :
+* Added TL-Smoothers : had to change the steps/mm for this :
+		- X : 86.10
+		- Y : 80.20
+		- Z : 1571.89
+
+-- 16/09/19 --
+*	Enclosure build
