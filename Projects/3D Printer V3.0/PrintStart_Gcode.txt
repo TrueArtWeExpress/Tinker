@@ -1,0 +1,57 @@
+G21        								;metric values
+G90     						    	;absolute positioning
+M82       						  	;set extruder to absolute mode
+M107     							  	;start with the fan off
+G28 X0 Y0  								;move X/Y to min endstops
+G28 Z0     								;move Z to min endstops
+G1 Z15.0 F{travel_speed}  ;move the platform down 15mm
+G1 X40 Y32              	; Move to print origin
+G92 X0 Y0 Z15.0         	; Set this coordinate to 0,0,15
+G92 E0                  	;zero the extruded length
+G1 F200 E3              	;extrude 3mm of feed stock
+G92 E0                  	;zero the extruded length again
+G1 F{travel_speed}				;Put printing message on LCD screen
+M117 											;Printing...
+
+* OLD *
+-- Start
+
+G28 ;Home
+G1 Z15.0 F6000 ;Move the platform down 15mm
+;Prime the extruder
+G92 E0
+G1 F200 E3
+G92 E0
+
+-- End
+
+M104 S0
+M140 S0
+;Retract the filament
+G92 E1
+G1 E-1 F300
+G28 X0 Y0
+M84
+
+* NEW *
+-- Start
+
+G21									;metric values
+G28									;Home
+G1 Z15.0 F6000			;lift z axis 15mm
+G1 X33 Y1 					;position to bed corner
+G92 X0 Y0 Z15.0			;set new position to 0,0,15
+G92 E0							;zero extruder length
+G1 F200 E3					;extrude 3mm
+G92 E0							;zero extruder after prime
+M117 Rock & Roll!   ;message to display
+
+* NEW V2 *
+-- Start
+
+G28									;Home
+G1 Z15.0 F6000			;lift z axis 15mm
+G92 E0							;zero extruder length
+G1 F200 E3					;extrude 3mm
+G92 E0							;zero extruder after prime
+M117 Rock & Roll!   ;message to display

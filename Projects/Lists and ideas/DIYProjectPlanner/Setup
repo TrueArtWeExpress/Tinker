@@ -1,0 +1,26 @@
+- Het idee is om te starten bij een idee (brainstorm)
+- Van daar na te denken over de benodigde onderdelen (parts), de tijd en kost (estimation) en referentie materialen (documents)
+- Wanneer een idee omgezet word tot een eigenlijk project (projects) kunnen de reeele tijd en kost toegevoegd worden.
+- Eens het project afgewerkt is kan in sales de verkoop ervan opgevolgd worden.
+
+
+Entity : Project
+	- Link with Brainstorm
+	- Link with tasks
+	- Link with Cont/Comp
+	- Link with reference
+	- Link with Sales
+	- Link with Gallery
+	- Link with Timesheet
+	- Link with Estimation
+	- Link with parts
+
+Entity : Brainstorm (Opportunity)
+
+Entity : Parts (products)
+
+Entity : Documents
+
+Entity : Timesheet
+
+Entity : Estimation
